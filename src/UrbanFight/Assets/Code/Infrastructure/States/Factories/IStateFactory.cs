@@ -1,3 +1,5 @@
+using Code.Infrastructure.States.Abstract;
+
 namespace Code.Infrastructure.States.Factories
 {
     public interface IStateFactory

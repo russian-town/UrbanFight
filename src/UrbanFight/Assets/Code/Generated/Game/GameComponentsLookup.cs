@@ -8,15 +8,24 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
+    public const int Destructed = 0;
+    public const int EntityLink = 1;
+    public const int Id = 2;
+    public const int WorldPosition = 3;
 
-
-    public const int TotalComponents = 0;
+    public const int TotalComponents = 4;
 
     public static readonly string[] componentNames = {
-
+        "Destructed",
+        "EntityLink",
+        "Id",
+        "WorldPosition"
     };
 
     public static readonly System.Type[] componentTypes = {
-
+        typeof(Code.Gameplay.Common.Destructed),
+        typeof(Code.Gameplay.Common.EntityLink),
+        typeof(Code.Gameplay.Common.Id),
+        typeof(Code.Gameplay.Common.WorldPosition)
     };
 }

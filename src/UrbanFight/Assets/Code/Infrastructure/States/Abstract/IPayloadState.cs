@@ -1,4 +1,4 @@
-namespace Code.Infrastructure.States
+namespace Code.Infrastructure.States.Abstract
 {
     public interface IPayloadState<TPayload> : IState
     {

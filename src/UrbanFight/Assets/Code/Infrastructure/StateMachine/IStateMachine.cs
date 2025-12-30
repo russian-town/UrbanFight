@@ -1,5 +1,6 @@
 using System;
 using Code.Infrastructure.States;
+using Code.Infrastructure.States.Abstract;
 
 namespace Code.Infrastructure.StateMachine
 {

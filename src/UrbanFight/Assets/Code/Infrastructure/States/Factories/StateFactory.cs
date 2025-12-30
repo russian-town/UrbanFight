@@ -1,3 +1,4 @@
+using Code.Infrastructure.States.Abstract;
 using Zenject;
 
 namespace Code.Infrastructure.States.Factories
