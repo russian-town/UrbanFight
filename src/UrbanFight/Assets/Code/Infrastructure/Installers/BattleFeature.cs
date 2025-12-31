@@ -1,12 +1,16 @@
-﻿using Code.Infrastructure.Systems;
+﻿using Code.Common.Destruct;
+using Code.Infrastructure.Systems;
+using Code.Infrastructure.View;
 
 namespace Code.Infrastructure.Installers
 {
     public class BattleFeature : Feature
     {
-        public BattleFeature(ISystemFactory systemFactory)
+        public BattleFeature(ISystemFactory systems)
         {
-            //Add(systemFactory.Create<Systems>());
+            Add(systems.Create<BindViewFeature>());
+            
+            Add(systems.Create<ProcessDestructedFeature>());
         }
     }
 }

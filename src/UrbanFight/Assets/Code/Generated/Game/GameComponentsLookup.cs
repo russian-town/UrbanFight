@@ -8,24 +8,51 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Destructed = 0;
-    public const int EntityLink = 1;
-    public const int Id = 2;
-    public const int WorldPosition = 3;
+    public const int Radius = 0;
+    public const int SelfDestructTimer = 1;
+    public const int View = 2;
+    public const int ViewPath = 3;
+    public const int ViewPrefab = 4;
+    public const int Destructed = 5;
+    public const int EntityLink = 6;
+    public const int Id = 7;
+    public const int WorldPosition = 8;
+    public const int Cooldown = 9;
+    public const int CooldownLeft = 10;
+    public const int CooldownUp = 11;
+    public const int Transform = 12;
 
-    public const int TotalComponents = 4;
+    public const int TotalComponents = 13;
 
     public static readonly string[] componentNames = {
+        "Radius",
+        "SelfDestructTimer",
+        "View",
+        "ViewPath",
+        "ViewPrefab",
         "Destructed",
         "EntityLink",
         "Id",
-        "WorldPosition"
+        "WorldPosition",
+        "Cooldown",
+        "CooldownLeft",
+        "CooldownUp",
+        "Transform"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.Common.CommonComponents.Radius),
+        typeof(Code.Common.CommonComponents.SelfDestructTimer),
+        typeof(Code.Common.CommonComponents.View),
+        typeof(Code.Common.CommonComponents.ViewPath),
+        typeof(Code.Common.CommonComponents.ViewPrefab),
         typeof(Code.Gameplay.Common.Destructed),
         typeof(Code.Gameplay.Common.EntityLink),
         typeof(Code.Gameplay.Common.Id),
-        typeof(Code.Gameplay.Common.WorldPosition)
+        typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
+        typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
+        typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
+        typeof(Code.Gameplay.TransformComponent)
     };
 }

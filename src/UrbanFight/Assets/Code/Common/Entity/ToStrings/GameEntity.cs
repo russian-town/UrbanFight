@@ -1,33 +1,32 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
 using Code.Common.Entity.ToStrings;
 using Entitas;
 using UnityEngine;
 
 // ReSharper disable once CheckNamespace
-public sealed partial class GameEntity : INamedEntity
-{
-  private EntityPrinter _printer;
-
-  public override string ToString()
+  public sealed partial class GameEntity : INamedEntity
   {
-    if (_printer == null)
-      _printer = new EntityPrinter(this);
+    private EntityPrinter _printer;
 
-    _printer.InvalidateCache();
-
-    return _printer.BuildToString();
-  }
-
-  public string EntityName(IComponent[] components)
-  {
-    try
+    public override string ToString()
     {
-      if (components.Length == 1)
-        return components[0].GetType().Name;
+      if (_printer == null)
+        _printer = new EntityPrinter(this);
 
-      /*foreach (IComponent component in components)
+      _printer.InvalidateCache();
+
+      return _printer.BuildToString();
+    }
+
+    public string EntityName(IComponent[] components)
+    {
+      try
+      {
+        if (components.Length == 1)
+          return components[0].GetType().Name;
+
+        /*foreach (IComponent component in components)
       {
         switch (component.GetType().Name)
         {
@@ -38,16 +37,16 @@ public sealed partial class GameEntity : INamedEntity
             return PrintEnemy();
         }
       }*/
-    }
-    catch (Exception exception)
-    {
-      Debug.LogError(exception.Message);
+      }
+      catch (Exception exception)
+      {
+        Debug.LogError(exception.Message);
+      }
+
+      return components.First().GetType().Name;
     }
 
-    return components.First().GetType().Name;
-  }
-
-  /*private string PrintHero()
+    /*private string PrintHero()
   {
     return new StringBuilder($"Hero ")
       .With(s => s.Append($"Id:{Id}"), when: hasId)
@@ -59,6 +58,6 @@ public sealed partial class GameEntity : INamedEntity
       .With(s => s.Append($"Id:{Id}"), when: hasId)
       .ToString();*/
   
-  public string BaseToString() => base.ToString();
-}
+    public string BaseToString() => base.ToString();
+  }
 
