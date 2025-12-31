@@ -1,5 +1,6 @@
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
+using Code.Infrastructure.Loading;
 using Code.Infrastructure.Services.Assets;
 using Code.Infrastructure.Services.StaticData;
 using Code.Infrastructure.StateMachine.Game;
@@ -10,7 +11,7 @@ using Zenject;
 
 namespace Code.Infrastructure.Installers
 {
-    public class BootstrapInstaller : MonoInstaller, IInitializable
+    public class BootstrapInstaller : MonoInstaller, IInitializable, ICoroutineRunner
     {
         public override void InstallBindings()
         {
@@ -25,18 +26,17 @@ namespace Code.Infrastructure.Installers
             BindSystemsFactory();
         }
 
-        private void BindStateMachine()
-        {
+        private void BindStateMachine() =>
             Container.BindInterfacesAndSelfTo<GameStateMachine>().AsSingle();
-        }
 
-        private void BindStateFactory()
-        {
+        private void BindStateFactory() =>
             Container.BindInterfacesAndSelfTo<StateFactory>().AsSingle();
-        }
 
         private void BindGameStates()
         {
+            Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<BattleEnterState>().AsSingle();
             Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
         }
 
@@ -52,7 +52,7 @@ namespace Code.Infrastructure.Installers
             
             Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
             Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
-            Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
+            Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
         }
 
         private void BindGameplayServices()
@@ -61,14 +61,10 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IRandomService>().To<UnityRandomService>().AsSingle();
         }
 
-        private void BindSystemsFactory()
-        {
+        private void BindSystemsFactory() =>
             Container.Bind<ISystemFactory>().To<SystemFactory>().AsSingle();
-        }
 
-        public void Initialize()
-        {
-            //Container.Resolve<IGameStateMachine>().Enter<BootstrapState>();
-        }
+        public void Initialize() =>
+            Container.Resolve<IGameStateMachine>().Enter<BootstrapState>();
     }
 }

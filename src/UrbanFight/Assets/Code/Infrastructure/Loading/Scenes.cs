@@ -2,6 +2,7 @@
 {
   public static class Scenes
   {
-    public const string Meadow = "Meadow";
+    public const string Initial = "Initial";
+    public const string Arena = "Arena";
   }
 }

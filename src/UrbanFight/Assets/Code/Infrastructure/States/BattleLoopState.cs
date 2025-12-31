@@ -1,6 +1,7 @@
 ﻿using Code.Infrastructure.Installers;
 using Code.Infrastructure.States.Abstract;
 using Code.Infrastructure.Systems;
+using UnityEngine;
 
 namespace Code.Infrastructure.States
 {
@@ -19,6 +20,8 @@ namespace Code.Infrastructure.States
         
         public void Enter()
         {
+            Debug.Log("Enter to battle loop state.");
+            
             _battleFeature = _systems.Create<BattleFeature>();
             _battleFeature.Initialize();
         }

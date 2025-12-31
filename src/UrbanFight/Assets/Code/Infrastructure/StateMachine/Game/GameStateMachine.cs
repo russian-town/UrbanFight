@@ -10,7 +10,8 @@ namespace Code.Infrastructure.StateMachine.Game
 
         private IState _activeState;
 
-        public GameStateMachine(IStateFactory stateFactory) => _stateFactory = stateFactory;
+        public GameStateMachine(IStateFactory stateFactory) =>
+            _stateFactory = stateFactory;
 
         public void Enter<TState>() where TState : class, IState
         {
