@@ -250,7 +250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 681721929}
   m_Layer: 0
-  m_Name: Socets
+  m_Name: Sockets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -469,7 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1535968985}
   m_Layer: 0
-  m_Name: Socet_Left
+  m_Name: Socket_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,6 +500,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2024147966}
   - component: {fileID: 2024147965}
+  - component: {fileID: 2024147968}
+  - component: {fileID: 2024147967}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -520,7 +522,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 2024147968}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -553,6 +556,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2024147967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024147964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f8e3e3f5fd47358d49995e8fb64491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RightSocket: {fileID: 2135702713}
+  LeftSocket: {fileID: 1535968985}
+--- !u!114 &2024147968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024147964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4bd204654094daea8eea76674403774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Initializers:
+  - {fileID: 2024147967}
 --- !u!1 &2135702709
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2135702713}
   m_Layer: 0
-  m_Name: Socet_Right
+  m_Name: Socket_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

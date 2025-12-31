@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Windows.Configs
 {
-  [CreateAssetMenu(fileName = "windowConfig", menuName = "ECS Survivors/Window Config")]
+  [CreateAssetMenu(menuName = "UrbanFight/Windows/Config", fileName = "WindowsConfig", order = 59)]
   public class WindowsConfig : ScriptableObject
   {
     public List<WindowConfig> WindowConfigs;

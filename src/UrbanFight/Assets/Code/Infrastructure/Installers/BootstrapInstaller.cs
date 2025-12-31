@@ -1,14 +1,17 @@
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features.Fighter.Factory;
 using Code.Gameplay.Windows;
 using Code.Infrastructure.Loading;
 using Code.Infrastructure.Services.Assets;
 using Code.Infrastructure.Services.Identifiers;
+using Code.Infrastructure.Services.Level;
 using Code.Infrastructure.Services.StaticData;
 using Code.Infrastructure.StateMachine.Game;
 using Code.Infrastructure.States;
 using Code.Infrastructure.States.Factories;
 using Code.Infrastructure.Systems;
+using Code.Infrastructure.View.Factory;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
@@ -24,7 +27,9 @@ namespace Code.Infrastructure.Installers
             BindContexts();
             
             BindInfrastructureServices();
+            
             BindGameplayServices();
+            BindGameplayFactories();
 
             BindUIServices();
             
@@ -58,6 +63,7 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
             Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+            Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
             
             Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
         }
@@ -66,6 +72,12 @@ namespace Code.Infrastructure.Installers
         {
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
             Container.Bind<IRandomService>().To<UnityRandomService>().AsSingle();
+        }
+        
+        private void BindGameplayFactories()
+        {
+            Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
+            Container.Bind<IFighterFactory>().To<FighterFactory>().AsSingle();
         }
 
         private void BindUIServices()

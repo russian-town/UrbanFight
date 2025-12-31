@@ -2,7 +2,7 @@
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
 
-namespace Code.Infrastructure.Installers
+namespace Code.Gameplay.Features
 {
     public class BattleFeature : Feature
     {
