@@ -1,3 +1,4 @@
+using Code.Infrastructure.Loading;
 using Code.Infrastructure.Services.Assets;
 using UnityEngine;
 using Zenject;
@@ -8,12 +9,14 @@ namespace Code.Infrastructure.View.Factory
     {
         private readonly IAssetProvider _assetProvider;
         private readonly IInstantiator _instantiator;
+        private readonly ISceneLoader _sceneLoader;
         private readonly Vector3 _farAway = new(-999, 999, 0);
 
-        public EntityViewFactory(IAssetProvider assetProvider, IInstantiator instantiator)
+        public EntityViewFactory(IAssetProvider assetProvider, IInstantiator instantiator, ISceneLoader sceneLoader)
         {
             _assetProvider = assetProvider;
             _instantiator = instantiator;
+            _sceneLoader = sceneLoader;
         }
 
         public EntityBehaviour CreateViewForEntity(GameEntity entity)
@@ -25,6 +28,8 @@ namespace Code.Infrastructure.View.Factory
                 position: _farAway,
                 Quaternion.identity,
                 parentTransform: null);
+
+            MoveViewToScene(view);
 
             view.SetEntity(entity);
             return view;
@@ -38,8 +43,19 @@ namespace Code.Infrastructure.View.Factory
                 Quaternion.identity,
                 parentTransform: null);
 
+            MoveViewToScene(view);
+            
             view.SetEntity(entity);
             return view;
+        }
+
+        private void MoveViewToScene(Component view)
+        {
+            GameObject viewGameObject = view.gameObject;
+            
+            viewGameObject.SetActive(false);
+            _sceneLoader.MoveObjectToScene(viewGameObject);
+            viewGameObject.SetActive(true);
         }
     }
 }

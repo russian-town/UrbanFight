@@ -17,6 +17,9 @@ namespace Code.Infrastructure.Loading
     public void LoadScene(string name, Action onLoaded = null) =>
       _coroutineRunner.StartCoroutine(Load(name, onLoaded));
 
+    public void MoveObjectToScene(GameObject gameObject) =>
+      SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
+
     private IEnumerator Load(string nextScene, Action onLoaded)
     {
       if (SceneManager.GetActiveScene().name == nextScene)

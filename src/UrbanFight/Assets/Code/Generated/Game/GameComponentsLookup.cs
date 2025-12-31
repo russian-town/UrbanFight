@@ -20,9 +20,10 @@ public static class GameComponentsLookup {
     public const int Cooldown = 9;
     public const int CooldownLeft = 10;
     public const int CooldownUp = 11;
-    public const int Transform = 12;
+    public const int FighterAnimator = 12;
+    public const int Transform = 13;
 
-    public const int TotalComponents = 13;
+    public const int TotalComponents = 14;
 
     public static readonly string[] componentNames = {
         "Radius",
@@ -37,6 +38,7 @@ public static class GameComponentsLookup {
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
+        "FighterAnimator",
         "Transform"
     };
 
@@ -53,6 +55,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
+        typeof(Code.Gameplay.Features.Fighter.FighterAnimatorComponent),
         typeof(Code.Gameplay.TransformComponent)
     };
 }
