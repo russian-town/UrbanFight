@@ -20,7 +20,7 @@ namespace Code.Infrastructure.View
       _entity.AddView(this);
       _entity.Retain(this);
 
-      foreach (var registrar in GetComponentsInChildren<IEntityComponentRegistrar>()) 
+      foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>()) 
         registrar.RegisterComponents();
 
       /*foreach (Collider2D collider2d in GetComponentsInChildren<Collider2D>(includeInactive: true)) 
@@ -29,7 +29,7 @@ namespace Code.Infrastructure.View
 
     public void ReleaseEntity()
     {
-      foreach (var registrar in GetComponentsInChildren<IEntityComponentRegistrar>()) 
+      foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>()) 
         registrar.UnregisterComponents();
 
       /*foreach (Collider2D collider2d in GetComponentsInChildren<Collider2D>(includeInactive: true)) 

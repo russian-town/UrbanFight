@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Movement
         public MovementFeature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<UpdateTransformPositionSystem>());
+            Add(systemFactory.Create<UpdateTransformRotationSystem>());
         }
     }
 }

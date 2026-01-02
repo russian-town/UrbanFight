@@ -17,13 +17,30 @@ public static class GameComponentsLookup {
     public const int EntityLink = 6;
     public const int Id = 7;
     public const int WorldPosition = 8;
-    public const int Cooldown = 9;
-    public const int CooldownLeft = 10;
-    public const int CooldownUp = 11;
-    public const int FighterAnimator = 12;
-    public const int Transform = 13;
+    public const int WorldRotation = 9;
+    public const int BaseAttack = 10;
+    public const int Casted = 11;
+    public const int DamagePerCast = 12;
+    public const int Duration = 13;
+    public const int HealPerCast = 14;
+    public const int Cooldown = 15;
+    public const int CooldownLeft = 16;
+    public const int CooldownUp = 17;
+    public const int Active = 18;
+    public const int BaseArmor = 19;
+    public const int BaseDamage = 20;
+    public const int BaseHealth = 21;
+    public const int Fighter = 22;
+    public const int FighterAnimator = 23;
+    public const int FighterTypeId = 24;
+    public const int Request = 25;
+    public const int DamagePerShoot = 26;
+    public const int DesertEagle = 27;
+    public const int ShootCount = 28;
+    public const int WeaponTypeId = 29;
+    public const int Transform = 30;
 
-    public const int TotalComponents = 14;
+    public const int TotalComponents = 31;
 
     public static readonly string[] componentNames = {
         "Radius",
@@ -35,10 +52,27 @@ public static class GameComponentsLookup {
         "EntityLink",
         "Id",
         "WorldPosition",
+        "WorldRotation",
+        "BaseAttack",
+        "Casted",
+        "DamagePerCast",
+        "Duration",
+        "HealPerCast",
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
+        "Active",
+        "BaseArmor",
+        "BaseDamage",
+        "BaseHealth",
+        "Fighter",
         "FighterAnimator",
+        "FighterTypeId",
+        "Request",
+        "DamagePerShoot",
+        "DesertEagle",
+        "ShootCount",
+        "WeaponTypeId",
         "Transform"
     };
 
@@ -52,10 +86,27 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.EntityLink),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Common.WorldRotation),
+        typeof(Code.Gameplay.Features.Abilities.BaseAttack),
+        typeof(Code.Gameplay.Features.Abilities.Casted),
+        typeof(Code.Gameplay.Features.Abilities.DamagePerCast),
+        typeof(Code.Gameplay.Features.Abilities.Duration),
+        typeof(Code.Gameplay.Features.Abilities.HealPerCast),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
+        typeof(Code.Gameplay.Features.Fighter.Active),
+        typeof(Code.Gameplay.Features.Fighter.BaseArmor),
+        typeof(Code.Gameplay.Features.Fighter.BaseDamage),
+        typeof(Code.Gameplay.Features.Fighter.BaseHealth),
+        typeof(Code.Gameplay.Features.Fighter.Fighter),
         typeof(Code.Gameplay.Features.Fighter.FighterAnimatorComponent),
+        typeof(Code.Gameplay.Features.Fighter.FighterTypeIdComponent),
+        typeof(Code.Gameplay.Features.Request.Request),
+        typeof(Code.Gameplay.Features.Weapons.DamagePerShoot),
+        typeof(Code.Gameplay.Features.Weapons.DesertEagle),
+        typeof(Code.Gameplay.Features.Weapons.ShootCount),
+        typeof(Code.Gameplay.Features.Weapons.WeaponTypeIdComponent),
         typeof(Code.Gameplay.TransformComponent)
     };
 }

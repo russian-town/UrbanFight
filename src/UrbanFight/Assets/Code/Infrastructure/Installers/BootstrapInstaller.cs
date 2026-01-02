@@ -1,5 +1,7 @@
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features.Abilities.Factories;
+using Code.Gameplay.Features.Abilities.Services;
 using Code.Gameplay.Features.Fighter.Factory;
 using Code.Gameplay.Windows;
 using Code.Infrastructure.Loading;
@@ -72,12 +74,16 @@ namespace Code.Infrastructure.Installers
         {
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
             Container.Bind<IRandomService>().To<UnityRandomService>().AsSingle();
+            
+            Container.Bind<IAbilityUpgradeService>().To<AbilityUpgradeService>().AsSingle();
+            Container.Bind<IAbilitySolver>().To<AbilitySolver>().AsSingle();
         }
         
         private void BindGameplayFactories()
         {
             Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
             Container.Bind<IFighterFactory>().To<FighterFactory>().AsSingle();
+            Container.Bind<IAbilityFactory>().To<AbilityFactory>().AsSingle();
         }
 
         private void BindUIServices()

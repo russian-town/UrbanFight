@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: FighterConfig
   m_EditorClassIdentifier: 
   TypeId: 1
+  FighterStats:
+  - StatTypeId: 1
+    Value: 10
+  - StatTypeId: 2
+    Value: 100
+  - StatTypeId: 3
+    Value: 0
   EntityTemplate: {fileID: -165678118306828701, guid: d4079aa080d130449a01cc6eb8e1f447,
     type: 3}
