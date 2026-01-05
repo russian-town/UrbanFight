@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.FighterStats.Configs;
+using Code.Gameplay.Features.FighterStats.Configs;
 using Code.Infrastructure.View;
 using UnityEngine;
 

@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.FighterStats
+﻿namespace Code.Gameplay.Features.FighterStats
 {
     public enum StatTypeId
     {

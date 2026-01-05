@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Code.Gameplay.FighterStats.Configs
+namespace Code.Gameplay.Features.FighterStats.Configs
 {
     [Serializable]
     public class StatByTypeId

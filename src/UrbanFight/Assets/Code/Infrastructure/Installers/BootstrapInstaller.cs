@@ -1,3 +1,4 @@
+using Code.Common.EntityIndices;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Abilities.Factories;
@@ -27,6 +28,7 @@ namespace Code.Infrastructure.Installers
             BindGameStates();
 
             BindContexts();
+            BindEntityIndices();
             
             BindInfrastructureServices();
             
@@ -58,6 +60,11 @@ namespace Code.Infrastructure.Installers
             Container.Bind<GameContext>().FromInstance(Contexts.sharedInstance.game).AsSingle();
         }
 
+        private void BindEntityIndices()
+        {
+            Container.BindInterfacesAndSelfTo<GameEntityIndices>().AsSingle();
+        }
+        
         private void BindInfrastructureServices()
         {
             Container.BindInterfacesTo<BootstrapInstaller>().FromInstance(this).AsSingle();

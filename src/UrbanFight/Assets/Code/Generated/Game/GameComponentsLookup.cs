@@ -16,31 +16,38 @@ public static class GameComponentsLookup {
     public const int Destructed = 5;
     public const int EntityLink = 6;
     public const int Id = 7;
-    public const int WorldPosition = 8;
-    public const int WorldRotation = 9;
-    public const int BaseAttack = 10;
-    public const int Casted = 11;
-    public const int DamagePerCast = 12;
-    public const int Duration = 13;
-    public const int HealPerCast = 14;
-    public const int Cooldown = 15;
-    public const int CooldownLeft = 16;
-    public const int CooldownUp = 17;
-    public const int Active = 18;
-    public const int BaseArmor = 19;
-    public const int BaseDamage = 20;
-    public const int BaseHealth = 21;
-    public const int Fighter = 22;
-    public const int FighterAnimator = 23;
-    public const int FighterTypeId = 24;
-    public const int Request = 25;
-    public const int DamagePerShoot = 26;
-    public const int DesertEagle = 27;
-    public const int ShootCount = 28;
-    public const int WeaponTypeId = 29;
-    public const int Transform = 30;
+    public const int TargetId = 8;
+    public const int WorldPosition = 9;
+    public const int WorldRotation = 10;
+    public const int BaseAttack = 11;
+    public const int Casted = 12;
+    public const int DamagePerCast = 13;
+    public const int Duration = 14;
+    public const int HealPerCast = 15;
+    public const int Cooldown = 16;
+    public const int CooldownLeft = 17;
+    public const int CooldownUp = 18;
+    public const int TimeLeft = 19;
+    public const int Active = 20;
+    public const int BaseArmor = 21;
+    public const int BaseDamage = 22;
+    public const int CurrentHealth = 23;
+    public const int Fighter = 24;
+    public const int FighterAnimator = 25;
+    public const int FighterTypeId = 26;
+    public const int MaxHealth = 27;
+    public const int BaseStats = 28;
+    public const int EffectValue = 29;
+    public const int StatChange = 30;
+    public const int StatModifiers = 31;
+    public const int Request = 32;
+    public const int DamagePerShoot = 33;
+    public const int DesertEagle = 34;
+    public const int ShootCount = 35;
+    public const int WeaponTypeId = 36;
+    public const int Transform = 37;
 
-    public const int TotalComponents = 31;
+    public const int TotalComponents = 38;
 
     public static readonly string[] componentNames = {
         "Radius",
@@ -51,6 +58,7 @@ public static class GameComponentsLookup {
         "Destructed",
         "EntityLink",
         "Id",
+        "TargetId",
         "WorldPosition",
         "WorldRotation",
         "BaseAttack",
@@ -61,13 +69,19 @@ public static class GameComponentsLookup {
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
+        "TimeLeft",
         "Active",
         "BaseArmor",
         "BaseDamage",
-        "BaseHealth",
+        "CurrentHealth",
         "Fighter",
         "FighterAnimator",
         "FighterTypeId",
+        "MaxHealth",
+        "BaseStats",
+        "EffectValue",
+        "StatChange",
+        "StatModifiers",
         "Request",
         "DamagePerShoot",
         "DesertEagle",
@@ -85,6 +99,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.Destructed),
         typeof(Code.Gameplay.Common.EntityLink),
         typeof(Code.Gameplay.Common.Id),
+        typeof(Code.Gameplay.Common.TargetId),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Common.WorldRotation),
         typeof(Code.Gameplay.Features.Abilities.BaseAttack),
@@ -95,13 +110,19 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
+        typeof(Code.Gameplay.Features.Cooldowns.TimeLeft),
         typeof(Code.Gameplay.Features.Fighter.Active),
         typeof(Code.Gameplay.Features.Fighter.BaseArmor),
         typeof(Code.Gameplay.Features.Fighter.BaseDamage),
-        typeof(Code.Gameplay.Features.Fighter.BaseHealth),
+        typeof(Code.Gameplay.Features.Fighter.CurrentHealth),
         typeof(Code.Gameplay.Features.Fighter.Fighter),
         typeof(Code.Gameplay.Features.Fighter.FighterAnimatorComponent),
         typeof(Code.Gameplay.Features.Fighter.FighterTypeIdComponent),
+        typeof(Code.Gameplay.Features.Fighter.MaxHealth),
+        typeof(Code.Gameplay.Features.FighterStats.BaseStats),
+        typeof(Code.Gameplay.Features.FighterStats.EffectValue),
+        typeof(Code.Gameplay.Features.FighterStats.StatChange),
+        typeof(Code.Gameplay.Features.FighterStats.StatModifiers),
         typeof(Code.Gameplay.Features.Request.Request),
         typeof(Code.Gameplay.Features.Weapons.DamagePerShoot),
         typeof(Code.Gameplay.Features.Weapons.DesertEagle),

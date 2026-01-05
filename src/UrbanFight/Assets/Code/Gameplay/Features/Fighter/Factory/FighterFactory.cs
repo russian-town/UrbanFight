@@ -1,7 +1,8 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Code.Common.Entity;
 using Code.Gameplay.Features.Fighter.Config;
-using Code.Gameplay.FighterStats;
+using Code.Gameplay.Features.FighterStats;
 using Code.Infrastructure.Services.Identifiers;
 using Code.Infrastructure.Services.StaticData;
 using UnityEngine;
@@ -22,15 +23,19 @@ namespace Code.Gameplay.Features.Fighter.Factory
         public GameEntity CreateFighter(Transform socket)
         {
             FighterConfig config = _staticData.GetFighterConfigByTypeId(FighterTypeId.Ganz);
+            Dictionary<StatTypeId, float> baseStats = config.FighterStats.ToDictionary(x => x.StatTypeId, x => x.Value); 
 
             return CreateEntity.Empty()
                     .AddId(_identifiers.Next())
                     .AddWorldPosition(socket.position)
                     .AddWorldRotation(socket.rotation)
                     .AddViewPrefab(config.EntityTemplate)
-                    .AddBaseHealth(config.FighterStats.First(x => x.StatTypeId == StatTypeId.BaseHealth).Value)
-                    .AddBaseDamage(config.FighterStats.First(x => x.StatTypeId == StatTypeId.BaseDamage).Value)
-                    .AddBaseArmor(config.FighterStats.First(x => x.StatTypeId == StatTypeId.BaseArmor).Value)
+                    .AddBaseStats(baseStats)
+                    .AddCurrentHealth(baseStats[StatTypeId.BaseHealth])
+                    .AddMaxHealth(baseStats[StatTypeId.BaseHealth])
+                    .AddBaseArmor(baseStats[StatTypeId.BaseArmor])
+                    .AddBaseDamage(baseStats[StatTypeId.BaseDamage])
+                    .AddStatModifiers(new Dictionary<StatTypeId, float>())
                 ;
         }
     }
