@@ -1,4 +1,5 @@
 ﻿using Code.Common.Destruct;
+using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.FighterStats;
 using Code.Gameplay.Features.Movement;
 using Code.Infrastructure.Systems;
@@ -13,6 +14,7 @@ namespace Code.Gameplay.Features
             Add(systems.Create<BindViewFeature>());
             
             Add(systems.Create<FighterStatsFeature>());
+            Add(systems.Create<EffectFeature>());
             
             Add(systems.Create<MovementFeature>());
             
