@@ -21,7 +21,6 @@ namespace Code.Gameplay.Features.Abilities.Systems
                         GameMatcher.Ability,
                         GameMatcher.AbilityTypeId,
                         GameMatcher.Block,
-                        GameMatcher.EffectSetups,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,
                         GameMatcher.Cooldown

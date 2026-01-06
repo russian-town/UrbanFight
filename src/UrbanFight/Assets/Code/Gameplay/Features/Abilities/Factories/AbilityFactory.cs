@@ -22,15 +22,11 @@ namespace Code.Gameplay.Features.Abilities.Factories
 
         public GameEntity CreateAbility(AbilityConfig config, int producerId, int targetId)
         {
-            int currentAbilityLevel = _abilityUpgradeService.GetCurrentAbilityLevel(config.TypeId) - 1;
-            List<EffectSetup> effectSetups = config.Levels[currentAbilityLevel].EffectSetups;
-
             GameEntity entity = CreateEntity.Empty()
                 .AddId(_identifiers.Next())
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .With(x => x.AddAbilityTypeId(config.TypeId))
-                .With(x => x.AddEffectSetups(effectSetups), when: !effectSetups.IsNullOrEmpty())
                 .With(x => x.isAbility = true)
                 .With(x => x.isBlockable = true, when: config.Blockable)
                 .AddCooldown(config.Cooldown)
@@ -39,7 +35,7 @@ namespace Code.Gameplay.Features.Abilities.Factories
             switch (config.TypeId)
             {
                 case AbilityTypeId.BaseAttack:
-                    return CreateBaseAttack(entity);
+                    return CreateBaseAttack(entity, config);
                 case AbilityTypeId.Block:
                     return CreateBlock(entity);
             }
@@ -47,10 +43,17 @@ namespace Code.Gameplay.Features.Abilities.Factories
             throw new ArgumentException($"Ability with type id {config.TypeId} is incorrect.");
         }
 
-        private GameEntity CreateBaseAttack(GameEntity entity) =>
-            entity.With(x => x.isBaseAttack = true);
+        private GameEntity CreateBaseAttack(GameEntity entity, AbilityConfig config)
+        {
+            int currentAbilityLevel = _abilityUpgradeService.GetCurrentAbilityLevel(config.TypeId) - 1;
+            List<EffectSetup> effectSetups = config.Levels[currentAbilityLevel].EffectSetups;
+            
+            return entity
+                .With(x => x.isBaseAttack = true)
+                .With(x => x.AddEffectSetups(effectSetups), when: !effectSetups.IsNullOrEmpty());
+        }
 
-        private GameEntity CreateBlock(GameEntity entity) =>
+        private static GameEntity CreateBlock(GameEntity entity) =>
             entity.With(x => x.isBlock = true);
     }
 }
