@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Code.Gameplay.Common.Random;
+using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.Features.Abilities.Factories;
 using Code.Gameplay.Features.Abilities.Services;
@@ -57,7 +59,16 @@ namespace Code.Gameplay.Features.Request.Systems
                 if (defenseAbility == null)
                     continue;
 
-                _abilityFactory.CreateAbility(defenseAbility, request.TargetId, request.ProducerId);
+                switch (defenseAbility.TypeId)
+                {
+                    case AbilityTypeId.Block:
+                        request.isBlocked = true;
+                        break;
+                    case AbilityTypeId.Counterattack:
+                        request.isСounterattacked = true;
+                        break;
+                }
+                
                 request.isProcessed = true;
             }
         }

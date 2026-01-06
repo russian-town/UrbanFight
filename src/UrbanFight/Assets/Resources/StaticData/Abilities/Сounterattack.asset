@@ -10,13 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a2e0485796642b3b4b0a9600e145d0d, type: 3}
-  m_Name: Block
+  m_Name: "\u0421ounterattack"
   m_EditorClassIdentifier: 
-  TypeId: 2
+  TypeId: 3
   FighterTypeId: 1
   BattleTypeId: 1
-  Chanse: 0
-  Levels: []
+  Chanse: 1
+  Levels:
+  - EffectSetups:
+    - EffectTypeId: 1
+      TargetTypeId: 0
+      Value: 7
   Blockable: 0
   Cooldown: 0
   Duration: 0

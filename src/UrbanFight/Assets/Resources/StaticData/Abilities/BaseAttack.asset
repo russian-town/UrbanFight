@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2e0485796642b3b4b0a9600e145d0d, type: 3}
   m_Name: BaseAttack
   m_EditorClassIdentifier: 
-  TypeId: 0
-  Levels: []
+  TypeId: 1
+  FighterTypeId: 1
+  BattleTypeId: 0
+  Chanse: 1
+  Levels:
+  - EffectSetups:
+    - EffectTypeId: 1
+      TargetTypeId: 0
+      Value: 10
+  Blockable: 1
+  Cooldown: 1
+  Duration: 1

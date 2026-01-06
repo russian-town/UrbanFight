@@ -26,11 +26,10 @@ namespace Code.Gameplay.Features.Abilities.Factories
                 .AddId(_identifiers.Next())
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
+                .AddDuration(config.Duration)
                 .With(x => x.AddAbilityTypeId(config.TypeId))
                 .With(x => x.isAbility = true)
-                .With(x => x.isBlockable = true, when: config.Blockable)
-                .AddCooldown(config.Cooldown)
-                .AddCooldownLeft(config.Cooldown);
+                .With(x => x.isBlockable = true, when: config.Blockable);
 
             switch (config.TypeId)
             {
@@ -38,6 +37,8 @@ namespace Code.Gameplay.Features.Abilities.Factories
                     return CreateBaseAttack(entity, config);
                 case AbilityTypeId.Block:
                     return CreateBlock(entity);
+                case AbilityTypeId.Counterattack:
+                    return CreateCounterattack(entity, config);
             }
 
             throw new ArgumentException($"Ability with type id {config.TypeId} is incorrect.");
@@ -47,7 +48,7 @@ namespace Code.Gameplay.Features.Abilities.Factories
         {
             int currentAbilityLevel = _abilityUpgradeService.GetCurrentAbilityLevel(config.TypeId) - 1;
             List<EffectSetup> effectSetups = config.Levels[currentAbilityLevel].EffectSetups;
-            
+
             return entity
                 .With(x => x.isBaseAttack = true)
                 .With(x => x.AddEffectSetups(effectSetups), when: !effectSetups.IsNullOrEmpty());
@@ -55,5 +56,17 @@ namespace Code.Gameplay.Features.Abilities.Factories
 
         private static GameEntity CreateBlock(GameEntity entity) =>
             entity.With(x => x.isBlock = true);
+
+        private GameEntity CreateCounterattack(GameEntity entity, AbilityConfig config)
+        {
+            int currentAbilityLevel = _abilityUpgradeService.GetCurrentAbilityLevel(config.TypeId) - 1;
+            List<EffectSetup> effectSetups = config.Levels[currentAbilityLevel].EffectSetups;
+
+            return entity
+                    .With(x => x.isCounterattack = true)
+                    .With(x => x.AddEffectSetups(effectSetups), when: !effectSetups.IsNullOrEmpty())
+                    .AddCooldown(config.Duration)
+                    .AddCooldownLeft(config.Duration);
+        }
     }
 }

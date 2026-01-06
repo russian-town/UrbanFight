@@ -11,6 +11,7 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
         private static readonly int GetUpHash = Animator.StringToHash("GetUp_A");
         private static readonly int KnockHash = Animator.StringToHash("Knock_A");
         private static readonly int QuickstepHash = Animator.StringToHash("Quickstep_B");
+        private static readonly int CounterattackHash = Animator.StringToHash("Counterattack");
 
         public Animator Animator;
 
@@ -27,6 +28,8 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
         public void PlayGetUp() => Animator.SetTrigger(GetUpHash);
 
         public void PlayKnock() => Animator.SetTrigger(KnockHash);
+        
+        public void PlayCounterattack() => Animator.SetTrigger(CounterattackHash);
 
         public void StopWalking()
         {

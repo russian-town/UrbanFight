@@ -1,25 +1,31 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Effects.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {
-    public class BlockAbilitySystem : IExecuteSystem
+    public class CounterattackAbilitySystem : IExecuteSystem
     {
+        private readonly IEffectFactory _effectFactory;
         private readonly IGroup<GameEntity> _abilities;
         private readonly IGroup<GameEntity> _fighters;
         private readonly List<GameEntity> _buffer = new(16);
 
-        public BlockAbilitySystem(GameContext game)
+        public CounterattackAbilitySystem(GameContext game, IEffectFactory effectFactory)
         {
+            _effectFactory = effectFactory;
+
             _abilities = game.GetGroup(
                 GameMatcher
                     .AllOf(
                         GameMatcher.Ability,
                         GameMatcher.AbilityTypeId,
-                        GameMatcher.Block,
+                        GameMatcher.Counterattack,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,
-                        GameMatcher.Cooldown
+                        GameMatcher.EffectSetups,
+                        GameMatcher.CooldownUp
                     )
                     .NoneOf(GameMatcher.Casted));
 
@@ -38,9 +44,13 @@ namespace Code.Gameplay.Features.Abilities.Systems
             {
                 if (ability.ProducerId != fighter.Id)
                     continue;
+
+                foreach (EffectSetup effectSetup in ability.EffectSetups)
+                    _effectFactory.CreateEffect(
+                        effectSetup,
+                        ability.ProducerId,
+                        ability.TargetId);
                 
-                fighter.FighterAnimator.PlayQuickstep();
-                ability.ReplaceCooldown(1f);
                 ability.isCasted = true;
             }
         }

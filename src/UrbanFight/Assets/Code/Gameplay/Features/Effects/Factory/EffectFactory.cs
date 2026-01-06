@@ -21,6 +21,7 @@ namespace Code.Gameplay.Features.Effects.Factory
       {
         EffectTypeId.Damage => CreateDamage(producerId, targetId, setup.Value),
         EffectTypeId.Heal => CreateHeal(producerId, targetId, setup.Value),
+        EffectTypeId.Сounterattack => CreateCounterattack(producerId, targetId, setup.Value),
         _ => throw new Exception($"Effect with type id {setup.EffectTypeId} does not exist")
       };
     }
@@ -42,6 +43,17 @@ namespace Code.Gameplay.Features.Effects.Factory
         .AddId(_identifiers.Next())
         .With(x => x.isEffect = true)
         .With(x => x.isHealEffect = true)
+        .AddEffectValue(value)
+        .AddProducerId(producerId)
+        .AddTargetId(targetId);
+    }
+
+    private GameEntity CreateCounterattack(int producerId, int targetId, float value)
+    {
+      return CreateEntity.Empty()
+        .AddId(_identifiers.Next())
+        .With(x => x.isEffect = true)
+        .With(x => x.isCounterattackEffect = true)
         .AddEffectValue(value)
         .AddProducerId(producerId)
         .AddTargetId(targetId);

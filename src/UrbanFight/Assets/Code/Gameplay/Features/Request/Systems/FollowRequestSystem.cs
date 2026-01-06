@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.Features.Abilities.Services;
 using Code.Gameplay.Features.Effects;
@@ -32,6 +34,7 @@ namespace Code.Gameplay.Features.Request.Systems
                 GameMatcher.AllOf(
                         GameMatcher.Request,
                         GameMatcher.ProducerId,
+                        GameMatcher.ParentAbilityId,
                         GameMatcher.TargetId)
                     .NoneOf(GameMatcher.Processed));
 
@@ -65,6 +68,13 @@ namespace Code.Gameplay.Features.Request.Systems
                         GetTargetId(effectSetup, request));
                 }
 
+                switch (abilityConfig.TypeId)
+                {
+                    case AbilityTypeId.BaseAttack:
+                        fighter.FighterAnimator.PlayBaseAttack();
+                        break;
+                }
+                
                 request.isProcessed = true;
             }
         }

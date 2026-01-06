@@ -14,14 +14,17 @@ namespace Code.Gameplay.Features.Request.Factory
             _identifiers = identifiers;
         }
 
-        public GameEntity CreateRequest(AbilityTypeId ability, int producerId, int targetId)
+        public GameEntity CreateRequest(AbilityTypeId ability, int producerId, int targetId, float attackTime)
         {
             return CreateEntity.Empty()
                 .AddId(_identifiers.Next())
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .With(x => x.isRequest = true)
-                .AddParentAbilityId(ability);
+                .AddParentAbilityId(ability)
+                .AddCooldown(attackTime)
+                .AddCooldownLeft(attackTime)
+                ;
         }
     }
 }

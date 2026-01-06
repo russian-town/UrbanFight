@@ -15,6 +15,7 @@ namespace Code.Gameplay.Features.Abilities
     [Game] public class Ability : IComponent { }
     [Game] public class BaseAttack : IComponent { }
     [Game] public class Block : IComponent { }
+    [Game] public class Counterattack : IComponent { }
     
     [Game] public class Casted : IComponent { }
 }

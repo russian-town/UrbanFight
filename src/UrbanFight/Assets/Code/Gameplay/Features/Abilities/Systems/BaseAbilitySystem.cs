@@ -21,10 +21,10 @@ namespace Code.Gameplay.Features.Abilities.Systems
                         GameMatcher.Ability,
                         GameMatcher.AbilityTypeId,
                         GameMatcher.BaseAttack,
+                        GameMatcher.Duration,
                         GameMatcher.EffectSetups,
                         GameMatcher.ProducerId,
-                        GameMatcher.TargetId,
-                        GameMatcher.Cooldown
+                        GameMatcher.TargetId
                     )
                     .NoneOf(GameMatcher.Casted));
 
@@ -32,7 +32,6 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 GameMatcher
                     .AllOf(
                         GameMatcher.Fighter,
-                        GameMatcher.FighterAnimator,
                         GameMatcher.Id));
         }
 
@@ -47,10 +46,9 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 _requestFactory.CreateRequest(
                     ability.AbilityTypeId,
                     ability.ProducerId,
-                    ability.TargetId);
+                    ability.TargetId,
+                    ability.Duration);
 
-                fighter.FighterAnimator.PlayBaseAttack();
-                ability.ReplaceCooldown(1f);
                 ability.isCasted = true;
             }
         }
