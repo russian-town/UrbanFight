@@ -8,8 +8,11 @@ namespace Code.Gameplay.Features.Abilities.Configs
     public class AbilityConfig : ScriptableObject
     {
         public AbilityTypeId TypeId;
+        public FighterTypeId FighterTypeId;
+        public BattleTypeId BattleTypeId;
         [Range(0f, 1f)] public float Chanse;
         public List<AbilityLevel> Levels;
-        public FighterTypeId FighterTypeId;
+        public bool Blockable;
+        public float Cooldown;
     }
 }

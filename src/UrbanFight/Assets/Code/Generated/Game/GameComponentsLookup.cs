@@ -21,42 +21,49 @@ public static class GameComponentsLookup {
     public const int TargetId = 10;
     public const int WorldPosition = 11;
     public const int WorldRotation = 12;
-    public const int BaseAttack = 13;
-    public const int Casted = 14;
-    public const int DamagePerCast = 15;
-    public const int Duration = 16;
-    public const int HealPerCast = 17;
-    public const int Cooldown = 18;
-    public const int CooldownLeft = 19;
-    public const int CooldownUp = 20;
-    public const int TimeLeft = 21;
-    public const int DamageEffect = 22;
-    public const int Effect = 23;
-    public const int HealEffect = 24;
-    public const int Active = 25;
-    public const int BaseArmor = 26;
-    public const int BaseDamage = 27;
-    public const int CurrentHealth = 28;
-    public const int Fighter = 29;
-    public const int FighterAnimator = 30;
-    public const int FighterTypeId = 31;
-    public const int MaxHealth = 32;
-    public const int BaseStats = 33;
-    public const int EffectValue = 34;
-    public const int StatChange = 35;
-    public const int StatModifiers = 36;
-    public const int CurrentHp = 37;
-    public const int Dead = 38;
-    public const int MaxHp = 39;
-    public const int ProcessingDeath = 40;
-    public const int Request = 41;
-    public const int DamagePerShoot = 42;
-    public const int DesertEagle = 43;
-    public const int ShootCount = 44;
-    public const int WeaponTypeId = 45;
-    public const int Transform = 46;
+    public const int Ability = 13;
+    public const int AbilityTypeId = 14;
+    public const int BaseAttack = 15;
+    public const int Block = 16;
+    public const int Blockable = 17;
+    public const int Casted = 18;
+    public const int DamagePerCast = 19;
+    public const int Duration = 20;
+    public const int EffectSetups = 21;
+    public const int HealPerCast = 22;
+    public const int ParentAbilityId = 23;
+    public const int Cooldown = 24;
+    public const int CooldownLeft = 25;
+    public const int CooldownUp = 26;
+    public const int TimeLeft = 27;
+    public const int DamageEffect = 28;
+    public const int Effect = 29;
+    public const int HealEffect = 30;
+    public const int Active = 31;
+    public const int BaseArmor = 32;
+    public const int BaseDamage = 33;
+    public const int CurrentHealth = 34;
+    public const int Fighter = 35;
+    public const int FighterAnimator = 36;
+    public const int FighterTypeId = 37;
+    public const int MaxHealth = 38;
+    public const int BaseStats = 39;
+    public const int EffectValue = 40;
+    public const int StatChange = 41;
+    public const int StatModifiers = 42;
+    public const int CurrentHp = 43;
+    public const int Dead = 44;
+    public const int MaxHp = 45;
+    public const int ProcessingDeath = 46;
+    public const int Accepted = 47;
+    public const int Request = 48;
+    public const int DamagePerShoot = 49;
+    public const int DesertEagle = 50;
+    public const int ShootCount = 51;
+    public const int WeaponTypeId = 52;
+    public const int Transform = 53;
 
-    public const int TotalComponents = 47;
+    public const int TotalComponents = 54;
 
     public static readonly string[] componentNames = {
         "Radius",
@@ -72,11 +79,17 @@ public static class GameComponentsLookup {
         "TargetId",
         "WorldPosition",
         "WorldRotation",
+        "Ability",
+        "AbilityTypeId",
         "BaseAttack",
+        "Block",
+        "Blockable",
         "Casted",
         "DamagePerCast",
         "Duration",
+        "EffectSetups",
         "HealPerCast",
+        "ParentAbilityId",
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
@@ -100,6 +113,7 @@ public static class GameComponentsLookup {
         "Dead",
         "MaxHp",
         "ProcessingDeath",
+        "Accepted",
         "Request",
         "DamagePerShoot",
         "DesertEagle",
@@ -122,11 +136,17 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.TargetId),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Common.WorldRotation),
+        typeof(Code.Gameplay.Features.Abilities.Ability),
+        typeof(Code.Gameplay.Features.Abilities.AbilityTypeIdComponent),
         typeof(Code.Gameplay.Features.Abilities.BaseAttack),
+        typeof(Code.Gameplay.Features.Abilities.Block),
+        typeof(Code.Gameplay.Features.Abilities.Blockable),
         typeof(Code.Gameplay.Features.Abilities.Casted),
         typeof(Code.Gameplay.Features.Abilities.DamagePerCast),
         typeof(Code.Gameplay.Features.Abilities.Duration),
+        typeof(Code.Gameplay.Features.Abilities.EffectSetups),
         typeof(Code.Gameplay.Features.Abilities.HealPerCast),
+        typeof(Code.Gameplay.Features.Abilities.ParentAbilityId),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
@@ -150,6 +170,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.Dead),
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.MaxHp),
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.ProcessingDeath),
+        typeof(Code.Gameplay.Features.Request.Accepted),
         typeof(Code.Gameplay.Features.Request.Request),
         typeof(Code.Gameplay.Features.Weapons.DamagePerShoot),
         typeof(Code.Gameplay.Features.Weapons.DesertEagle),

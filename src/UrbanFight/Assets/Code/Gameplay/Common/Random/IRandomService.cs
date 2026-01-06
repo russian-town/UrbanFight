@@ -4,5 +4,6 @@ namespace Code.Gameplay.Common.Random
   {
     float Range(float inclusiveMin, float inclusiveMax);
     int Range(int inclusiveMin, int exclusiveMax);
+    float GetChance();
   }
 }

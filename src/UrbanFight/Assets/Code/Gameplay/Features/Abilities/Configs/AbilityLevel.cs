@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using Code.Gameplay.Features.Effects;
 
 namespace Code.Gameplay.Features.Abilities.Configs
 {
     [Serializable]
     public class AbilityLevel
     {
-        public float Damage;
-        public float Heal;
+        public List<EffectSetup> EffectSetups;
     }
 }

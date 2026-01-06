@@ -24,9 +24,6 @@ namespace Code.Infrastructure.States
 
         public void Enter()
         {
-            Debug.Log("Enter to battle enter state.");
-
-            //  TODO: CreateFighters and more
             PlaceFighters();
             _gameStateMachine.Enter<BattleLoopState>();
         }
@@ -39,6 +36,11 @@ namespace Code.Infrastructure.States
         {
             GameEntity hero = _fighterFactory.CreateFighter(_levelDataProvider.LeftSocket);
             GameEntity enemy = _fighterFactory.CreateFighter(_levelDataProvider.RightSocket);
+
+            hero.AddTargetId(enemy.Id);
+            enemy.AddTargetId(hero.Id);
+            
+            hero.isActive = true;
         }
     }
 }

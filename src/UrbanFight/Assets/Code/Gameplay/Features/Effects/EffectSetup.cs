@@ -1,4 +1,5 @@
 ﻿using System;
+using Code.Gameplay.Features.Abilities.Configs;
 
 namespace Code.Gameplay.Features.Effects
 {
@@ -6,6 +7,7 @@ namespace Code.Gameplay.Features.Effects
     public class EffectSetup
     {
         public EffectTypeId EffectTypeId;
+        public TargetTypeId TargetTypeId;
         public float Value;
     }
 }

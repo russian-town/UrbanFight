@@ -25,6 +25,7 @@ namespace Code.Infrastructure.Services.StaticData
         public void Load()
         {
             LoadFighterConfigs();
+            LoadAbilitiesConfigs();
         }
 
         public GameObject GetWindowPrefab(WindowId id) => null;

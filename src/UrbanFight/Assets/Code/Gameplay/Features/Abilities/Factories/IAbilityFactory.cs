@@ -4,6 +4,6 @@ namespace Code.Gameplay.Features.Abilities.Factories
 {
     public interface IAbilityFactory
     {
-        GameEntity CreateAbility(AbilityConfig config);
+        GameEntity CreateAbility(AbilityConfig config, int producerId, int targetId);
     }
 }

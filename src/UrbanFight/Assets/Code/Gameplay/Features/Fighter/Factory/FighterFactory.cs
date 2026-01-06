@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Code.Common.Entity;
+using Code.Common.Extensions;
 using Code.Gameplay.Features.Fighter.Config;
 using Code.Gameplay.Features.FighterStats;
 using Code.Infrastructure.Services.Identifiers;
@@ -27,6 +28,7 @@ namespace Code.Gameplay.Features.Fighter.Factory
 
             return CreateEntity.Empty()
                     .AddId(_identifiers.Next())
+                    .AddFighterTypeId(config.TypeId)
                     .AddWorldPosition(socket.position)
                     .AddWorldRotation(socket.rotation)
                     .AddViewPrefab(config.EntityTemplate)
@@ -36,6 +38,7 @@ namespace Code.Gameplay.Features.Fighter.Factory
                     .AddBaseArmor(baseStats[StatTypeId.BaseArmor])
                     .AddBaseDamage(baseStats[StatTypeId.BaseDamage])
                     .AddStatModifiers(new Dictionary<StatTypeId, float>())
+                    .With(x => x.isFighter = true)
                 ;
         }
     }

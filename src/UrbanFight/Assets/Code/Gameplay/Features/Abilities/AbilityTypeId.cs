@@ -4,5 +4,6 @@
     {
         Unknown = 0,
         BaseAttack = 1,
+        Block = 2,
     }
 }

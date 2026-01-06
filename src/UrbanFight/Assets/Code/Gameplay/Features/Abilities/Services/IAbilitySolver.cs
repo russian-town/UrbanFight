@@ -5,6 +5,7 @@ namespace Code.Gameplay.Features.Abilities.Services
 {
     public interface IAbilitySolver
     {
-        AbilityConfig GetRandomOffensiveAbility(FighterTypeId by);
+        AbilityConfig GetRandomOffensiveAbility(FighterTypeId fighterTypeId, float randomChance);
+        AbilityConfig GetRandomDefenseAbility(FighterTypeId fighterTypeId, float randomChance);
     }
 }

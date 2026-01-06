@@ -7,7 +7,7 @@ namespace Code.Gameplay.Features.Turn
     {
         public TurnFeature(ISystemFactory systems)
         {
-            Add(systems.Create<RequestOffensiveAbilityByActiveFightersSystem>());
+            Add(systems.Create<CastOffensiveAbilityByActiveFightersSystem>());
         }
     }
 }
