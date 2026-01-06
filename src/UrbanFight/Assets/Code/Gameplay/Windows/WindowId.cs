@@ -5,5 +5,6 @@
     LevelUpWindow = 0,
     ShopWindow = 1,
     GameOverWindow = 2,
+    HUD = 3,
   }
 }

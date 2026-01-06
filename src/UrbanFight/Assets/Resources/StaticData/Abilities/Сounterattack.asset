@@ -15,12 +15,12 @@ MonoBehaviour:
   TypeId: 3
   FighterTypeId: 1
   BattleTypeId: 1
-  Chanse: 1
+  Chanse: 0
   Levels:
   - EffectSetups:
-    - EffectTypeId: 1
+    - EffectTypeId: 3
       TargetTypeId: 0
       Value: 7
   Blockable: 0
-  Cooldown: 0
-  Duration: 0
+  Cooldown: 1
+  Duration: 1

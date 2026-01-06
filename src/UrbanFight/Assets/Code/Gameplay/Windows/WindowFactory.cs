@@ -8,6 +8,7 @@ namespace Code.Gameplay.Windows
   {
     private readonly IStaticDataService _staticData;
     private readonly IInstantiator _instantiator;
+    
     private RectTransform _uiRoot;
 
     public WindowFactory(IStaticDataService staticData, IInstantiator instantiator)

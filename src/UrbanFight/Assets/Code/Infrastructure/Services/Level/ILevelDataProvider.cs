@@ -6,5 +6,6 @@ namespace Code.Infrastructure.Services.Level
     {
         Transform RightSocket { get; set; }
         Transform LeftSocket { get; set; }
+        RectTransform UIRoot { get; set; }
     }
 }
