@@ -1,5 +1,6 @@
 ﻿using Code.Infrastructure.View;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Common
 {
@@ -10,5 +11,6 @@ namespace Code.Common
         [Game] public class ViewPrefab : IComponent { public EntityBehaviour Value; }
         [Game] public class SelfDestructTimer : IComponent { public float Value; }
         [Game] public class Radius : IComponent { public float Value; }
+        [Game] public class Parent : IComponent { public RectTransform Value; }
     }
 }

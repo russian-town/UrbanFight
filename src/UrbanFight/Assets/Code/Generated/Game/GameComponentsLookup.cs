@@ -8,54 +8,54 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Radius = 0;
-    public const int SelfDestructTimer = 1;
-    public const int View = 2;
-    public const int ViewPath = 3;
-    public const int ViewPrefab = 4;
-    public const int Destructed = 5;
-    public const int EntityLink = 6;
-    public const int Id = 7;
-    public const int Processed = 8;
-    public const int ProducerId = 9;
-    public const int TargetId = 10;
-    public const int WorldPosition = 11;
-    public const int WorldRotation = 12;
-    public const int Ability = 13;
-    public const int AbilityTypeId = 14;
-    public const int BaseAttack = 15;
-    public const int Block = 16;
-    public const int Blockable = 17;
-    public const int Casted = 18;
-    public const int Counterattack = 19;
-    public const int DamagePerCast = 20;
-    public const int Duration = 21;
-    public const int EffectSetups = 22;
-    public const int HealPerCast = 23;
-    public const int ParentAbilityId = 24;
-    public const int Cooldown = 25;
-    public const int CooldownLeft = 26;
-    public const int CooldownUp = 27;
-    public const int TimeLeft = 28;
-    public const int CounterattackEffect = 29;
-    public const int DamageEffect = 30;
-    public const int Effect = 31;
-    public const int HealEffect = 32;
-    public const int Active = 33;
-    public const int BaseArmor = 34;
-    public const int BaseDamage = 35;
-    public const int CurrentHealth = 36;
-    public const int Fighter = 37;
-    public const int FighterAnimator = 38;
-    public const int FighterTypeId = 39;
-    public const int MaxHealth = 40;
-    public const int BaseStats = 41;
-    public const int EffectValue = 42;
-    public const int StatChange = 43;
-    public const int StatModifiers = 44;
-    public const int CurrentHp = 45;
+    public const int Parent = 0;
+    public const int Radius = 1;
+    public const int SelfDestructTimer = 2;
+    public const int View = 3;
+    public const int ViewPath = 4;
+    public const int ViewPrefab = 5;
+    public const int Destructed = 6;
+    public const int EntityLink = 7;
+    public const int Id = 8;
+    public const int Processed = 9;
+    public const int ProducerId = 10;
+    public const int TargetId = 11;
+    public const int WorldPosition = 12;
+    public const int WorldRotation = 13;
+    public const int Ability = 14;
+    public const int AbilityTypeId = 15;
+    public const int BaseAttack = 16;
+    public const int Block = 17;
+    public const int Blockable = 18;
+    public const int Casted = 19;
+    public const int Counterattack = 20;
+    public const int DamagePerCast = 21;
+    public const int Duration = 22;
+    public const int EffectSetups = 23;
+    public const int HealPerCast = 24;
+    public const int ParentAbilityId = 25;
+    public const int Cooldown = 26;
+    public const int CooldownLeft = 27;
+    public const int CooldownUp = 28;
+    public const int TimeLeft = 29;
+    public const int CounterattackEffect = 30;
+    public const int DamageEffect = 31;
+    public const int Effect = 32;
+    public const int HealEffect = 33;
+    public const int Active = 34;
+    public const int BaseArmor = 35;
+    public const int BaseDamage = 36;
+    public const int CurrentHealth = 37;
+    public const int Fighter = 38;
+    public const int FighterAnimator = 39;
+    public const int FighterTypeId = 40;
+    public const int MaxHealth = 41;
+    public const int BaseStats = 42;
+    public const int EffectValue = 43;
+    public const int StatChange = 44;
+    public const int StatModifiers = 45;
     public const int Dead = 46;
-    public const int MaxHp = 47;
+    public const int HealthBar = 47;
     public const int ProcessingDeath = 48;
     public const int Сounterattacked = 49;
     public const int Accepted = 50;
@@ -70,6 +70,7 @@ public static class GameComponentsLookup {
     public const int TotalComponents = 58;
 
     public static readonly string[] componentNames = {
+        "Parent",
         "Radius",
         "SelfDestructTimer",
         "View",
@@ -115,9 +116,8 @@ public static class GameComponentsLookup {
         "EffectValue",
         "StatChange",
         "StatModifiers",
-        "CurrentHp",
         "Dead",
-        "MaxHp",
+        "HealthBar",
         "ProcessingDeath",
         "Сounterattacked",
         "Accepted",
@@ -131,6 +131,7 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.Common.CommonComponents.Parent),
         typeof(Code.Common.CommonComponents.Radius),
         typeof(Code.Common.CommonComponents.SelfDestructTimer),
         typeof(Code.Common.CommonComponents.View),
@@ -176,9 +177,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.FighterStats.EffectValue),
         typeof(Code.Gameplay.Features.FighterStats.StatChange),
         typeof(Code.Gameplay.Features.FighterStats.StatModifiers),
-        typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.CurrentHp),
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.Dead),
-        typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.MaxHp),
+        typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.HealthBarComponent),
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.ProcessingDeath),
         typeof(Code.Gameplay.Features.Request.Сounterattacked),
         typeof(Code.Gameplay.Features.Request.Accepted),

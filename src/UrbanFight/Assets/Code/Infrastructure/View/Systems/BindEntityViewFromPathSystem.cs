@@ -16,8 +16,11 @@ namespace Code.Infrastructure.View.Systems
 
             _entities = game.GetGroup(
                 GameMatcher
-                    .AllOf(GameMatcher.ViewPath)
-                    .NoneOf(GameMatcher.View));
+                    .AllOf(
+                        GameMatcher.ViewPath)
+                    .NoneOf(
+                        GameMatcher.View,
+                        GameMatcher.Parent));
         }
 
         public void Execute()

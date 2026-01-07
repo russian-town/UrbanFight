@@ -35,6 +35,21 @@ namespace Code.Infrastructure.View.Factory
             return view;
         }
 
+        public EntityBehaviour CreateViewForEntityFromPrefabWithParent(GameEntity entity)
+        {
+            EntityBehaviour viewPrefab = _assetProvider.LoadAsset<EntityBehaviour>(entity.ViewPath);
+
+            EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
+                viewPrefab,
+                position: Vector2.zero,
+                Quaternion.identity,
+                parentTransform: entity.Parent);
+
+            view.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+            view.SetEntity(entity);
+            return view;
+        }
+
         public EntityBehaviour CreateViewForEntityFromPrefab(GameEntity entity)
         {
             EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
@@ -44,7 +59,7 @@ namespace Code.Infrastructure.View.Factory
                 parentTransform: null);
 
             MoveViewToScene(view);
-            
+
             view.SetEntity(entity);
             return view;
         }
@@ -52,7 +67,7 @@ namespace Code.Infrastructure.View.Factory
         private void MoveViewToScene(Component view)
         {
             GameObject viewGameObject = view.gameObject;
-            
+
             viewGameObject.SetActive(false);
             _sceneLoader.MoveObjectToScene(viewGameObject);
             viewGameObject.SetActive(true);

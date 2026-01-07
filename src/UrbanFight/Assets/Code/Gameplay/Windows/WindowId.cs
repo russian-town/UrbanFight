@@ -2,9 +2,6 @@
 {
   public enum WindowId
   {
-    LevelUpWindow = 0,
-    ShopWindow = 1,
-    GameOverWindow = 2,
-    HUD = 3,
+    Unknown = 0,
   }
 }

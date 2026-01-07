@@ -16,16 +16,17 @@ namespace Code.Infrastructure.View.Systems
 
             _entities = game.GetGroup(
                 GameMatcher
-                    .AllOf(GameMatcher.ViewPrefab)
-                    .NoneOf(GameMatcher.View));
+                    .AllOf(
+                        GameMatcher.ViewPrefab)
+                    .NoneOf(
+                        GameMatcher.View,
+                        GameMatcher.Parent));
         }
 
         public void Execute()
         {
             foreach (GameEntity entity in _entities.GetEntities(_buffer))
-            {
                 _entityViewFactory.CreateViewForEntityFromPrefab(entity);
-            }
         }
     }
 }

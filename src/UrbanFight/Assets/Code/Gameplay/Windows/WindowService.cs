@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Object = UnityEngine.Object;
 
 namespace Code.Gameplay.Windows
 {
@@ -19,6 +21,12 @@ namespace Code.Gameplay.Windows
             BaseWindow window = _openedWindows.Find(x => x.Id == windowId);
             _openedWindows.Remove(window);
             Object.Destroy(window.gameObject);
+        }
+
+        public T GetOpenedWindow<T>(WindowId id) where T : BaseWindow
+        {
+            BaseWindow baseWindow = _openedWindows.First(x => x.Id == id);
+            return (T)baseWindow;
         }
     }
 }

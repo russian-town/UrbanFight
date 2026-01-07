@@ -5,6 +5,7 @@ using Code.Gameplay.Features.Abilities.Factories;
 using Code.Gameplay.Features.Abilities.Services;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Fighter.Factory;
+using Code.Gameplay.Features.Lifetime.Factories;
 using Code.Gameplay.Features.Request.Factory;
 using Code.Gameplay.Windows;
 using Code.Infrastructure.Loading;
@@ -31,14 +32,15 @@ namespace Code.Infrastructure.Installers
 
             BindContexts();
             BindEntityIndices();
-            
+
             BindInfrastructureServices();
-            
+
             BindGameplayServices();
             BindGameplayFactories();
 
             BindUIServices();
-            
+            BindUIFactories();
+
             BindSystemsFactory();
         }
 
@@ -66,16 +68,16 @@ namespace Code.Infrastructure.Installers
         {
             Container.BindInterfacesAndSelfTo<GameEntityIndices>().AsSingle();
         }
-        
+
         private void BindInfrastructureServices()
         {
             Container.BindInterfacesTo<BootstrapInstaller>().FromInstance(this).AsSingle();
-            
+
             Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
             Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
             Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
-            
+
             Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
         }
 
@@ -83,11 +85,11 @@ namespace Code.Infrastructure.Installers
         {
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
             Container.Bind<IRandomService>().To<UnityRandomService>().AsSingle();
-            
+
             Container.Bind<IAbilityUpgradeService>().To<AbilityUpgradeService>().AsSingle();
             Container.Bind<IAbilitySolver>().To<AbilitySolver>().AsSingle();
         }
-        
+
         private void BindGameplayFactories()
         {
             Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
@@ -101,6 +103,11 @@ namespace Code.Infrastructure.Installers
         {
             Container.Bind<IWindowService>().To<WindowService>().AsSingle();
             Container.Bind<IWindowFactory>().To<WindowFactory>().AsSingle();
+        }
+
+        private void BindUIFactories()
+        {
+            Container.Bind<IHealthBarFactory>().To<HealthBarFactory>().AsSingle();
         }
 
         private void BindSystemsFactory() =>

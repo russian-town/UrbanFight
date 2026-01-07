@@ -64,8 +64,7 @@ namespace Code.Infrastructure.Services.StaticData
         private void LoadWindowsStaticData()
         {
             _getWindowByTypeId = _asset
-                .LoadAll<WindowsConfig>("StaticData/UI/Windows")
-                .First()
+                .Load<WindowsConfig>("StaticData/UI/Windows/WindowsStaticData")
                 .WindowConfigs
                 .ToDictionary(x => x.Id, x => x.Prefab);
         }

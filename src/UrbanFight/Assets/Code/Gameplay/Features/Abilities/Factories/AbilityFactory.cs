@@ -23,13 +23,14 @@ namespace Code.Gameplay.Features.Abilities.Factories
         public GameEntity CreateAbility(AbilityConfig config, int producerId, int targetId)
         {
             GameEntity entity = CreateEntity.Empty()
-                .AddId(_identifiers.Next())
-                .AddProducerId(producerId)
-                .AddTargetId(targetId)
-                .AddDuration(config.Duration)
-                .With(x => x.AddAbilityTypeId(config.TypeId))
-                .With(x => x.isAbility = true)
-                .With(x => x.isBlockable = true, when: config.Blockable);
+                    .AddId(_identifiers.Next())
+                    .AddProducerId(producerId)
+                    .AddTargetId(targetId)
+                    .AddDuration(config.Duration)
+                    .With(x => x.AddAbilityTypeId(config.TypeId))
+                    .With(x => x.isAbility = true)
+                    .With(x => x.isBlockable = true, when: config.Blockable)
+                ;
 
             switch (config.TypeId)
             {
@@ -63,10 +64,10 @@ namespace Code.Gameplay.Features.Abilities.Factories
             List<EffectSetup> effectSetups = config.Levels[currentAbilityLevel].EffectSetups;
 
             return entity
-                    .With(x => x.isCounterattack = true)
-                    .With(x => x.AddEffectSetups(effectSetups), when: !effectSetups.IsNullOrEmpty())
-                    .AddCooldown(config.Duration)
-                    .AddCooldownLeft(config.Duration);
+                .With(x => x.isCounterattack = true)
+                .With(x => x.AddEffectSetups(effectSetups), when: !effectSetups.IsNullOrEmpty())
+                .AddCooldown(config.Duration)
+                .AddCooldownLeft(config.Duration);
         }
     }
 }

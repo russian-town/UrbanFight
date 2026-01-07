@@ -3,6 +3,8 @@ using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Cooldowns.Systems;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.FighterStats;
+using Code.Gameplay.Features.Lifetime;
+using Code.Gameplay.Features.Lifetime.Systems;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Request;
 using Code.Gameplay.Features.Turn;
@@ -26,6 +28,8 @@ namespace Code.Gameplay.Features
             Add(systems.Create<EffectFeature>());
             
             Add(systems.Create<CooldownSystem>());
+            
+            Add(systems.Create<DeathFeature>());
             Add(systems.Create<ProcessDestructedFeature>());
         }
     }

@@ -15,21 +15,21 @@ namespace Code.Gameplay.Features.Lifetime.Systems
                 GameMatcher.TargetId));
                 */
 
-            _dead = game.GetGroup(
+            /*_dead = game.GetGroup(
                 GameMatcher
                     .AllOf(
                         GameMatcher.Id,
-                        GameMatcher.Dead));
+                        GameMatcher.Dead));*/
         }
 
         public void Execute()
         {
-            foreach (GameEntity entity in _dead)
+            /*foreach (GameEntity entity in _dead)
             foreach (GameEntity status in _statuses)
             {
                 /*if (status.TargetId == entity.Id)
-                  status.isUnapplied = true;*/
-            }
+                  status.isUnapplied = true;#1#
+            }*/
         }
     }
 }
