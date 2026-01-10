@@ -15,5 +15,7 @@ namespace Code.Gameplay.Features.Abilities.Configs
         public bool Blockable;
         public float Cooldown;
         public float Duration;
+        public string DebugText;
+        public bool IsAnimatedWait;
     }
 }

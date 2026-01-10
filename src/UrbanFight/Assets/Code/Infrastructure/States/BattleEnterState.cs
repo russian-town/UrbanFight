@@ -1,15 +1,18 @@
-﻿using Code.Gameplay.Features.Fighter.Factory;
+﻿using Code.Common.Entity;
+using Code.Gameplay.Features.Fighter;
+using Code.Gameplay.Features.Fighter.Factory;
 using Code.Gameplay.Features.Lifetime.Factories;
 using Code.Infrastructure.Services.Level;
 using Code.Infrastructure.Services.StaticData;
 using Code.Infrastructure.StateMachine.Game;
 using Code.Infrastructure.States.Abstract;
-using UnityEngine;
 
 namespace Code.Infrastructure.States
 {
     public class BattleEnterState : IState
     {
+        private const string PathToAbilityHolderPrefab = "Prefabs/UI/HUD/Abilities/AbilityPlaceHolder";
+        
         private readonly IGameStateMachine _gameStateMachine;
         private readonly IFighterFactory _fighterFactory;
         private readonly ILevelDataProvider _levelDataProvider;
@@ -33,6 +36,7 @@ namespace Code.Infrastructure.States
             GameEntity hero = PlaceHero();
             GameEntity enemy = PlaceEnemy();
 
+            CreateAbilityHolders(hero.Id, enemy.Id);
             SetFighterTargets(hero, enemy);
             CreateHealthBars(hero.Id, enemy.Id);
 
@@ -48,6 +52,19 @@ namespace Code.Infrastructure.States
 
         private GameEntity PlaceEnemy() =>
             _fighterFactory.CreateFighter(_levelDataProvider.RightSocket);
+
+        private void CreateAbilityHolders(int heroId, int enemyId)
+        {
+            CreateEntity.Empty()
+                .AddViewPath(PathToAbilityHolderPrefab)
+                .AddParent(_levelDataProvider.AbilityLeftPlaceHolder)
+                .AddTargetId(heroId);
+            
+            CreateEntity.Empty()
+                .AddViewPath(PathToAbilityHolderPrefab)
+                .AddParent(_levelDataProvider.AbilityRightPlaceHolder)
+                .AddTargetId(enemyId);
+        }
 
         private void CreateHealthBars(int heroId, int enemyId)
         {

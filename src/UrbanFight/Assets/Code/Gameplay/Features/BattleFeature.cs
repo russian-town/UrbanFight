@@ -22,10 +22,10 @@ namespace Code.Gameplay.Features
             Add(systems.Create<FighterStatsFeature>());
             Add(systems.Create<MovementFeature>());
             
-            Add(systems.Create<TurnFeature>());
-            Add(systems.Create<AbilityFeature>());
-            Add(systems.Create<RequestFeature>());
-            Add(systems.Create<EffectFeature>());
+            //Add(systems.Create<TurnFeature>());
+           // Add(systems.Create<AbilityFeature>());
+           // Add(systems.Create<RequestFeature>());
+           // Add(systems.Create<EffectFeature>());
             
             Add(systems.Create<CooldownSystem>());
             

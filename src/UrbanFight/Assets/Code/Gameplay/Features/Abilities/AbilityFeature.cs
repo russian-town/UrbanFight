@@ -10,6 +10,8 @@ namespace Code.Gameplay.Features.Abilities
             Add(systems.Create<BaseAbilitySystem>());
             Add(systems.Create<BlockAbilitySystem>());
             Add(systems.Create<CounterattackAbilitySystem>());
+            
+            Add(systems.Create<ShowAbilityItemsSystem>());
         }
     }
 }

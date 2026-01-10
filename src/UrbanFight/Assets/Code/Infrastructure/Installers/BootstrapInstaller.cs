@@ -108,6 +108,7 @@ namespace Code.Infrastructure.Installers
         private void BindUIFactories()
         {
             Container.Bind<IHealthBarFactory>().To<HealthBarFactory>().AsSingle();
+            Container.Bind<IAbilityItemFactory>().To<AbilityItemFactory>().AsSingle();
         }
 
         private void BindSystemsFactory() =>
