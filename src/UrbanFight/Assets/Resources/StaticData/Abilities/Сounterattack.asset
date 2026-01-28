@@ -21,6 +21,13 @@ MonoBehaviour:
     - EffectTypeId: 3
       TargetTypeId: 0
       Value: 7
+    StatusSetups:
+    - StatusTypeId: 2
+      Value: 0
+      Duration: 0
+      Period: 0
   Blockable: 0
   Cooldown: 1
-  Duration: 1
+  AttackTime: 0
+  DebugText: 
+  IsAnimatedWait: 0

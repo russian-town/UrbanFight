@@ -14,7 +14,7 @@ namespace Code.Gameplay.Features.Abilities.Configs
         public List<AbilityLevel> Levels;
         public bool Blockable;
         public float Cooldown;
-        public float Duration;
+        public float AttackTime;
         public string DebugText;
         public bool IsAnimatedWait;
     }

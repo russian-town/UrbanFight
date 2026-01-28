@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Statuses;
 
 namespace Code.Gameplay.Features.Abilities.Configs
 {
@@ -8,5 +9,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
     public class AbilityLevel
     {
         public List<EffectSetup> EffectSetups;
+        public List<StatusSetup> StatusSetups;
     }
 }

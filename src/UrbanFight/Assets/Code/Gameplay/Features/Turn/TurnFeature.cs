@@ -7,7 +7,8 @@ namespace Code.Gameplay.Features.Turn
     {
         public TurnFeature(ISystemFactory systems)
         {
-            Add(systems.Create<CastOffensiveAbilityByActiveFightersSystem>());
+            Add(systems.Create<TurnQueueInitializationSystem>());
+            Add(systems.Create<TurnSystem>());
         }
     }
 }

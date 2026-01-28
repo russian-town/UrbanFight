@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Abilities.Duration duration { get { return (Code.Gameplay.Features.Abilities.Duration)GetComponent(GameComponentsLookup.Duration); } }
+    public Code.Gameplay.Features.Statuses.Duration duration { get { return (Code.Gameplay.Features.Statuses.Duration)GetComponent(GameComponentsLookup.Duration); } }
     public float Duration { get { return duration.Value; } }
     public bool hasDuration { get { return HasComponent(GameComponentsLookup.Duration); } }
 
     public GameEntity AddDuration(float newValue) {
         var index = GameComponentsLookup.Duration;
-        var component = (Code.Gameplay.Features.Abilities.Duration)CreateComponent(index, typeof(Code.Gameplay.Features.Abilities.Duration));
+        var component = (Code.Gameplay.Features.Statuses.Duration)CreateComponent(index, typeof(Code.Gameplay.Features.Statuses.Duration));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceDuration(float newValue) {
         var index = GameComponentsLookup.Duration;
-        var component = (Code.Gameplay.Features.Abilities.Duration)CreateComponent(index, typeof(Code.Gameplay.Features.Abilities.Duration));
+        var component = (Code.Gameplay.Features.Statuses.Duration)CreateComponent(index, typeof(Code.Gameplay.Features.Statuses.Duration));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

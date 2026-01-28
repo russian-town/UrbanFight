@@ -2,6 +2,7 @@
 using Code.Gameplay.Features.Abilities.Behaviours;
 using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Statuses;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities
@@ -9,10 +10,12 @@ namespace Code.Gameplay.Features.Abilities
     [Game] public class AbilityTypeIdComponent : IComponent { public AbilityTypeId Value; }
     [Game] public class ParentAbilityId : IComponent { public AbilityTypeId Value; }
     [Game] public class BattleTypeIdComponent : IComponent { public BattleTypeId Value; }
-    [Game] public class Duration : IComponent { public float Value; }
+    [Game] public class AttackTime : IComponent { public float Value; }
     [Game] public class DamagePerCast : IComponent { public float Value; }
     [Game] public class HealPerCast : IComponent { public float Value; }
+    
     [Game] public class EffectSetups : IComponent { public List<EffectSetup> Value; }
+    [Game] public class StatusSetups : IComponent { public List<StatusSetup> Value; }
     
     [Game] public class AbilityHolderComponent : IComponent { public AbilityHolder Value; }
     
@@ -25,4 +28,6 @@ namespace Code.Gameplay.Features.Abilities
     [Game] public class Casted : IComponent { }
     [Game] public class Showed : IComponent { }
     [Game] public class AnimatedWait : IComponent { }
+    
+    //if ability cooldown blocked request = 0 spawn effect
 }

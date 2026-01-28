@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.Features.Fighter;
 using Code.Gameplay.Features.Fighter.Config;
@@ -13,5 +14,6 @@ namespace Code.Infrastructure.Services.StaticData
         GameObject GetWindowPrefab(WindowId id);
         FighterConfig GetFighterConfigByTypeId(FighterTypeId typeId);
         IEnumerable<AbilityConfig> GetAbilityConfigsByFighterTypeId(FighterTypeId typeId);
+        AbilityConfig GetAbilityConfigByFighterTypeId(FighterTypeId fighterTypeId, AbilityTypeId abilityTypeId);
     }
 }

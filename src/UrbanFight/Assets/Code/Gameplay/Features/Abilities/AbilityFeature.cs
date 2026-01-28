@@ -7,11 +7,10 @@ namespace Code.Gameplay.Features.Abilities
     {
         public AbilityFeature(ISystemFactory systems)
         {
-            Add(systems.Create<BaseAbilitySystem>());
             Add(systems.Create<BlockAbilitySystem>());
             Add(systems.Create<CounterattackAbilitySystem>());
-            
-            Add(systems.Create<ShowAbilityItemsSystem>());
+
+            Add(systems.Create<BaseAbilitySystem>());
         }
     }
 }

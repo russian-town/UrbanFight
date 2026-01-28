@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.Features.Fighter;
 using Code.Gameplay.Features.Fighter.Config;
@@ -46,6 +47,12 @@ namespace Code.Infrastructure.Services.StaticData
 
         public IEnumerable<AbilityConfig> GetAbilityConfigsByFighterTypeId(FighterTypeId typeId) =>
             _allAbilities.Where(x => x.FighterTypeId == typeId);
+
+        public AbilityConfig GetAbilityConfigByFighterTypeId(FighterTypeId fighterTypeId, AbilityTypeId abilityTypeId)
+        {
+            return GetAbilityConfigsByFighterTypeId(fighterTypeId)
+                .First(x => x.TypeId == abilityTypeId);
+        }
 
         private void LoadFighterConfigs()
         {

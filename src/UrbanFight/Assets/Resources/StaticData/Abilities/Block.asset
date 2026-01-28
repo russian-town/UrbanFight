@@ -15,8 +15,16 @@ MonoBehaviour:
   TypeId: 2
   FighterTypeId: 1
   BattleTypeId: 1
-  Chanse: 0
-  Levels: []
+  Chanse: 1
+  Levels:
+  - EffectSetups: []
+    StatusSetups:
+    - StatusTypeId: 1
+      Value: 0
+      Duration: 0
+      Period: 0
   Blockable: 0
   Cooldown: 0
-  Duration: 0
+  AttackTime: 0
+  DebugText: 
+  IsAnimatedWait: 0

@@ -26,22 +26,22 @@ public static class GameComponentsLookup {
     public const int AbilityHolder = 15;
     public const int AbilityTypeId = 16;
     public const int AnimatedWait = 17;
-    public const int BaseAttack = 18;
-    public const int BattleTypeId = 19;
-    public const int Block = 20;
-    public const int Blockable = 21;
-    public const int Casted = 22;
-    public const int Counterattack = 23;
-    public const int DamagePerCast = 24;
-    public const int Duration = 25;
+    public const int AttackTime = 18;
+    public const int BaseAttack = 19;
+    public const int BattleTypeId = 20;
+    public const int Block = 21;
+    public const int Blockable = 22;
+    public const int Casted = 23;
+    public const int Counterattack = 24;
+    public const int DamagePerCast = 25;
     public const int EffectSetups = 26;
     public const int HealPerCast = 27;
     public const int ParentAbilityId = 28;
     public const int Showed = 29;
-    public const int Cooldown = 30;
-    public const int CooldownLeft = 31;
-    public const int CooldownUp = 32;
-    public const int TimeLeft = 33;
+    public const int StatusSetups = 30;
+    public const int Cooldown = 31;
+    public const int CooldownLeft = 32;
+    public const int CooldownUp = 33;
     public const int CounterattackEffect = 34;
     public const int DamageEffect = 35;
     public const int Effect = 36;
@@ -61,17 +61,28 @@ public static class GameComponentsLookup {
     public const int Dead = 50;
     public const int HealthBar = 51;
     public const int ProcessingDeath = 52;
-    public const int Сounterattacked = 53;
-    public const int Accepted = 54;
-    public const int Blocked = 55;
-    public const int Request = 56;
-    public const int DamagePerShoot = 57;
-    public const int DesertEagle = 58;
-    public const int ShootCount = 59;
-    public const int WeaponTypeId = 60;
-    public const int Transform = 61;
+    public const int Affected = 53;
+    public const int Applied = 54;
+    public const int ApplierStatusLink = 55;
+    public const int Duration = 56;
+    public const int Period = 57;
+    public const int Status = 58;
+    public const int StatusTypeId = 59;
+    public const int TimeLeft = 60;
+    public const int TimeSinceLastTick = 61;
+    public const int Unapplied = 62;
+    public const int AttackIntent = 63;
+    public const int Initiative = 64;
+    public const int TurnOwner = 65;
+    public const int TurnQueue = 66;
+    public const int TurnState = 67;
+    public const int DamagePerShoot = 68;
+    public const int DesertEagle = 69;
+    public const int ShootCount = 70;
+    public const int WeaponTypeId = 71;
+    public const int Transform = 72;
 
-    public const int TotalComponents = 62;
+    public const int TotalComponents = 73;
 
     public static readonly string[] componentNames = {
         "Parent",
@@ -92,6 +103,7 @@ public static class GameComponentsLookup {
         "AbilityHolder",
         "AbilityTypeId",
         "AnimatedWait",
+        "AttackTime",
         "BaseAttack",
         "BattleTypeId",
         "Block",
@@ -99,15 +111,14 @@ public static class GameComponentsLookup {
         "Casted",
         "Counterattack",
         "DamagePerCast",
-        "Duration",
         "EffectSetups",
         "HealPerCast",
         "ParentAbilityId",
         "Showed",
+        "StatusSetups",
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
-        "TimeLeft",
         "CounterattackEffect",
         "DamageEffect",
         "Effect",
@@ -127,10 +138,21 @@ public static class GameComponentsLookup {
         "Dead",
         "HealthBar",
         "ProcessingDeath",
-        "Сounterattacked",
-        "Accepted",
-        "Blocked",
-        "Request",
+        "Affected",
+        "Applied",
+        "ApplierStatusLink",
+        "Duration",
+        "Period",
+        "Status",
+        "StatusTypeId",
+        "TimeLeft",
+        "TimeSinceLastTick",
+        "Unapplied",
+        "AttackIntent",
+        "Initiative",
+        "TurnOwner",
+        "TurnQueue",
+        "TurnState",
         "DamagePerShoot",
         "DesertEagle",
         "ShootCount",
@@ -157,6 +179,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.AbilityHolderComponent),
         typeof(Code.Gameplay.Features.Abilities.AbilityTypeIdComponent),
         typeof(Code.Gameplay.Features.Abilities.AnimatedWait),
+        typeof(Code.Gameplay.Features.Abilities.AttackTime),
         typeof(Code.Gameplay.Features.Abilities.BaseAttack),
         typeof(Code.Gameplay.Features.Abilities.BattleTypeIdComponent),
         typeof(Code.Gameplay.Features.Abilities.Block),
@@ -164,15 +187,14 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.Casted),
         typeof(Code.Gameplay.Features.Abilities.Counterattack),
         typeof(Code.Gameplay.Features.Abilities.DamagePerCast),
-        typeof(Code.Gameplay.Features.Abilities.Duration),
         typeof(Code.Gameplay.Features.Abilities.EffectSetups),
         typeof(Code.Gameplay.Features.Abilities.HealPerCast),
         typeof(Code.Gameplay.Features.Abilities.ParentAbilityId),
         typeof(Code.Gameplay.Features.Abilities.Showed),
+        typeof(Code.Gameplay.Features.Abilities.StatusSetups),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
-        typeof(Code.Gameplay.Features.Cooldowns.TimeLeft),
         typeof(Code.Gameplay.Features.Effects.CounterattackEffect),
         typeof(Code.Gameplay.Features.Effects.DamageEffect),
         typeof(Code.Gameplay.Features.Effects.Effect),
@@ -192,10 +214,21 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.Dead),
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.HealthBarComponent),
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.ProcessingDeath),
-        typeof(Code.Gameplay.Features.Request.Сounterattacked),
-        typeof(Code.Gameplay.Features.Request.Accepted),
-        typeof(Code.Gameplay.Features.Request.Blocked),
-        typeof(Code.Gameplay.Features.Request.Request),
+        typeof(Code.Gameplay.Features.Statuses.Affected),
+        typeof(Code.Gameplay.Features.Statuses.Applied),
+        typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),
+        typeof(Code.Gameplay.Features.Statuses.Duration),
+        typeof(Code.Gameplay.Features.Statuses.Period),
+        typeof(Code.Gameplay.Features.Statuses.Status),
+        typeof(Code.Gameplay.Features.Statuses.StatusTypeIdComponent),
+        typeof(Code.Gameplay.Features.Statuses.TimeLeft),
+        typeof(Code.Gameplay.Features.Statuses.TimeSinceLastTick),
+        typeof(Code.Gameplay.Features.Statuses.Unapplied),
+        typeof(Code.Gameplay.Features.Turn.AttackIntent),
+        typeof(Code.Gameplay.Features.Turn.Initiative),
+        typeof(Code.Gameplay.Features.Turn.TurnOwner),
+        typeof(Code.Gameplay.Features.Turn.TurnQueue),
+        typeof(Code.Gameplay.Features.Turn.TurnStateComponent),
         typeof(Code.Gameplay.Features.Weapons.DamagePerShoot),
         typeof(Code.Gameplay.Features.Weapons.DesertEagle),
         typeof(Code.Gameplay.Features.Weapons.ShootCount),

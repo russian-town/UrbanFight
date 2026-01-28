@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Effects.Factory;
+using Code.Gameplay.Features.Statuses;
+using Code.Gameplay.Features.Statuses.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
@@ -8,33 +10,33 @@ namespace Code.Gameplay.Features.Abilities.Systems
     public class CounterattackAbilitySystem : IExecuteSystem
     {
         private readonly IEffectFactory _effectFactory;
+        private readonly IStatusFactory _statusFactory;
         private readonly IGroup<GameEntity> _abilities;
         private readonly IGroup<GameEntity> _fighters;
         private readonly List<GameEntity> _buffer = new(16);
 
-        public CounterattackAbilitySystem(GameContext game, IEffectFactory effectFactory)
+        public CounterattackAbilitySystem(GameContext game, IEffectFactory effectFactory, IStatusFactory statusFactory)
         {
             _effectFactory = effectFactory;
+            _statusFactory = statusFactory;
 
             _abilities = game.GetGroup(
-                GameMatcher
-                    .AllOf(
+                GameMatcher.AllOf(
                         GameMatcher.Ability,
                         GameMatcher.AbilityTypeId,
                         GameMatcher.Counterattack,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,
                         GameMatcher.EffectSetups,
-                        GameMatcher.CooldownUp
+                        GameMatcher.StatusSetups
                     )
                     .NoneOf(GameMatcher.Casted));
 
             _fighters = game.GetGroup(
-                GameMatcher
-                    .AllOf(
-                        GameMatcher.Fighter,
-                        GameMatcher.FighterAnimator,
-                        GameMatcher.Id));
+                GameMatcher.AllOf(
+                    GameMatcher.Fighter,
+                    GameMatcher.FighterAnimator,
+                    GameMatcher.Id));
         }
 
         public void Execute()
@@ -46,11 +48,12 @@ namespace Code.Gameplay.Features.Abilities.Systems
                     continue;
 
                 foreach (EffectSetup effectSetup in ability.EffectSetups)
-                    _effectFactory.CreateEffect(
-                        effectSetup,
-                        ability.ProducerId,
-                        ability.TargetId);
-                
+                    _effectFactory.CreateEffect(effectSetup, ability.ProducerId, ability.TargetId);
+
+                foreach (StatusSetup statusSetups in ability.StatusSetups)
+                    _statusFactory.CreateStatus(statusSetups, ability.ProducerId, ability.TargetId);
+
+                fighter.FighterAnimator.PlayCounterattack();
                 ability.isCasted = true;
             }
         }

@@ -1,5 +1,4 @@
 ﻿using Code.Common.Entity;
-using Code.Gameplay.Features.Fighter;
 using Code.Gameplay.Features.Fighter.Factory;
 using Code.Gameplay.Features.Lifetime.Factories;
 using Code.Infrastructure.Services.Level;
@@ -12,7 +11,7 @@ namespace Code.Infrastructure.States
     public class BattleEnterState : IState
     {
         private const string PathToAbilityHolderPrefab = "Prefabs/UI/HUD/Abilities/AbilityPlaceHolder";
-        
+
         private readonly IGameStateMachine _gameStateMachine;
         private readonly IFighterFactory _fighterFactory;
         private readonly ILevelDataProvider _levelDataProvider;
@@ -33,8 +32,12 @@ namespace Code.Infrastructure.States
 
         public void Enter()
         {
-            GameEntity hero = PlaceHero();
-            GameEntity enemy = PlaceEnemy();
+            GameEntity hero = PlaceHero()
+                .AddInitiative(100)
+                .AddAttackIntent(100);
+
+            GameEntity enemy = PlaceEnemy()
+                .AddInitiative(0);
 
             CreateAbilityHolders(hero.Id, enemy.Id);
             SetFighterTargets(hero, enemy);
@@ -59,7 +62,7 @@ namespace Code.Infrastructure.States
                 .AddViewPath(PathToAbilityHolderPrefab)
                 .AddParent(_levelDataProvider.AbilityLeftPlaceHolder)
                 .AddTargetId(heroId);
-            
+
             CreateEntity.Empty()
                 .AddViewPath(PathToAbilityHolderPrefab)
                 .AddParent(_levelDataProvider.AbilityRightPlaceHolder)

@@ -2,6 +2,8 @@
 using Code.Gameplay.Common;
 using Code.Gameplay.Features.CharacterStats.Indexing;
 using Code.Gameplay.Features.FighterStats;
+using Code.Gameplay.Features.Statuses;
+using Code.Gameplay.Features.Statuses.Indexing;
 using Entitas;
 using Zenject;
 
@@ -21,13 +23,13 @@ namespace Code.Common.EntityIndices
     
     public void Initialize()
     {
-      /*_game.AddEntityIndex(new EntityIndex<GameEntity, StatusKey>(
+      _game.AddEntityIndex(new EntityIndex<GameEntity, StatusKey>(
         name: StatusesOfType,
         _game.GetGroup(GameMatcher.AllOf(
           GameMatcher.Duration,
           GameMatcher.TimeLeft)),
         getKey: GetTargetStatusKey,
-        new StatusKeyEqualityComparer()));*/
+        new StatusKeyEqualityComparer()));
 
       _game.AddEntityIndex(new EntityIndex<GameEntity, StatKey>(
         name: StatChanges,
@@ -45,21 +47,21 @@ namespace Code.Common.EntityIndices
         (component as StatChange)?.Value ?? entity.StatChange);
     }
 
-    /*private StatusKey GetTargetStatusKey(GameEntity entity, IComponent component)
+    private StatusKey GetTargetStatusKey(GameEntity entity, IComponent component)
     {
       return new StatusKey(
         (component as TargetId)?.Value ?? entity.TargetId,
         (component as StatusTypeIdComponent)?.Value ?? entity.StatusTypeId);
-    }*/
+    }
   }
 
   public static class ContextIndicesExtensions
   {
-    /*public static HashSet<GameEntity> TargetStatusesOfType(this GameContext context, StatusTypeId statusTypeId, int targetId)
+    public static HashSet<GameEntity> TargetStatusesOfType(this GameContext context, StatusTypeId statusTypeId, int targetId)
     {
       return ((EntityIndex<GameEntity, StatusKey>) context.GetEntityIndex(GameEntityIndices.StatusesOfType))
         .GetEntities(new StatusKey(targetId, statusTypeId));
-    }*/
+    }
 
     public static HashSet<GameEntity> TargetStatChanges(this GameContext context, StatTypeId stat, int targetId)
     {
