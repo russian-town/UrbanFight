@@ -1,72 +1,85 @@
 ﻿using System.Collections.Generic;
-using Code.Common.Extensions;
+using Code.Gameplay.Features.Turn;
 using Entitas;
+using UnityEngine;
 
-namespace Code.Gameplay.Features.Turn.System
+public sealed class TurnSystem : IExecuteSystem
 {
-    public class TurnSystem : IExecuteSystem
+    private readonly IGroup<GameEntity> _turns;
+    private readonly IGroup<GameEntity> _turnOwners;
+
+    public TurnSystem(GameContext game)
     {
-        private readonly GameContext _game;
-        private readonly IGroup<GameEntity> _turns;
+        _turns = game.GetGroup(
+            GameMatcher.AllOf(
+                GameMatcher.TurnQueue,
+                GameMatcher.TurnState));
 
-        public TurnSystem(GameContext game)
+        _turnOwners = game.GetGroup(GameMatcher.TurnOwner);
+    }
+
+    public void Execute()
+    {
+        foreach (GameEntity turn in _turns)
         {
-            _game = game;
+            Queue<GameEntity> queue = turn.TurnQueue;
 
-            _turns = game.GetGroup(
-                GameMatcher.AllOf(
-                    GameMatcher.TurnQueue,
-                    GameMatcher.TurnState));
-        }
-
-        public void Execute()
-        {
-            foreach (GameEntity turn in _turns)
+            switch (turn.TurnState)
             {
-                Queue<GameEntity> queue = turn.TurnQueue;
+                case TurnState.StartTurn:
+                    if (queue.Count == 0)
+                        return;
 
-                switch (turn.TurnState)
-                {
-                    case TurnState.StartTurn:
-                        if (queue.Count == 0)
-                            return;
+                    GameEntity current = queue.Dequeue();
 
-                        queue.Dequeue().With(x => x.isTurnOwner = true);
-                        turn.ReplaceTurnState(TurnState.Action);
+                    if (current.isSkipNextTurn)
+                    {
+                        current.isSkipNextTurn = false;
+                        queue.Enqueue(current);
 
+                        Debug.Log($"[TURN SKIPPED] {current.Id}");
+                        return;
+                    }
+
+                    current.isTurnOwner = true;
+
+                    Debug.Log($"[TURN START] Fighter: {current.Id}");
+
+                    turn.ReplaceTurnState(TurnState.Action);
+                    break;
+
+                case TurnState.Action:
+                    GameEntity owner = GetTurnOwner();
+
+                    if (owner is { isForceEndTurn: true, })
+                    {
+                        owner.isForceEndTurn = false;
+                        turn.ReplaceTurnState(TurnState.EndTurn);
                         break;
+                    }
 
-                    case TurnState.Action:
-                        if (!AnyEntityHasAttackIntent())
-                            turn.ReplaceTurnState(TurnState.EndTurn);
+                    turn.ReplaceTurnState(TurnState.EndTurn);
+                    break;
 
-                        break;
+                case TurnState.EndTurn:
+                    GameEntity endOwner = GetTurnOwner();
 
-                    case TurnState.EndTurn:
-                        GameEntity owner = GetTurnOwner();
+                    if (endOwner != null)
+                    {
+                        endOwner.isTurnOwner = false;
+                        queue.Enqueue(endOwner);
+                    }
 
-                        if (owner != null)
-                        {
-                            owner.isTurnOwner = false;
-                            queue.Enqueue(owner);
-                        }
-
-                        turn.ReplaceTurnState(TurnState.StartTurn);
-                        break;
-                }
+                    turn.ReplaceTurnState(TurnState.StartTurn);
+                    break;
             }
         }
+    }
 
-        private bool AnyEntityHasAttackIntent() =>
-            _game.GetGroup(GameMatcher.AttackIntent).count > 0;
-
-        private GameEntity GetTurnOwner()
-        {
-            IGroup<GameEntity> group = _game.GetGroup(GameMatcher.TurnOwner);
-
-            return group.count > 0
-                ? group.GetSingleEntity()
-                : null;
-        }
+    private GameEntity GetTurnOwner()
+    {
+        return _turnOwners.count > 0
+            ? _turnOwners.GetSingleEntity()
+            : null;
     }
 }

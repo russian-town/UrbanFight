@@ -71,18 +71,23 @@ public static class GameComponentsLookup {
     public const int TimeLeft = 60;
     public const int TimeSinceLastTick = 61;
     public const int Unapplied = 62;
-    public const int AttackIntent = 63;
-    public const int Initiative = 64;
-    public const int TurnOwner = 65;
-    public const int TurnQueue = 66;
-    public const int TurnState = 67;
-    public const int DamagePerShoot = 68;
-    public const int DesertEagle = 69;
-    public const int ShootCount = 70;
-    public const int WeaponTypeId = 71;
-    public const int Transform = 72;
+    public const int AbilityCasting = 63;
+    public const int AbilityHitMoment = 64;
+    public const int AttackIntent = 65;
+    public const int Initiative = 66;
+    public const int TurnOwner = 67;
+    public const int TurnQueue = 68;
+    public const int TurnState = 69;
+    public const int DamagePerShoot = 70;
+    public const int DesertEagle = 71;
+    public const int ShootCount = 72;
+    public const int WeaponTypeId = 73;
+    public const int ForceEndTurn = 74;
+    public const int InterruptTypeId = 75;
+    public const int SkipNextTurn = 76;
+    public const int Transform = 77;
 
-    public const int TotalComponents = 73;
+    public const int TotalComponents = 78;
 
     public static readonly string[] componentNames = {
         "Parent",
@@ -148,6 +153,8 @@ public static class GameComponentsLookup {
         "TimeLeft",
         "TimeSinceLastTick",
         "Unapplied",
+        "AbilityCasting",
+        "AbilityHitMoment",
         "AttackIntent",
         "Initiative",
         "TurnOwner",
@@ -157,6 +164,9 @@ public static class GameComponentsLookup {
         "DesertEagle",
         "ShootCount",
         "WeaponTypeId",
+        "ForceEndTurn",
+        "InterruptTypeId",
+        "SkipNextTurn",
         "Transform"
     };
 
@@ -224,6 +234,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.TimeLeft),
         typeof(Code.Gameplay.Features.Statuses.TimeSinceLastTick),
         typeof(Code.Gameplay.Features.Statuses.Unapplied),
+        typeof(Code.Gameplay.Features.Turn.AbilityCasting),
+        typeof(Code.Gameplay.Features.Turn.AbilityHitMoment),
         typeof(Code.Gameplay.Features.Turn.AttackIntent),
         typeof(Code.Gameplay.Features.Turn.Initiative),
         typeof(Code.Gameplay.Features.Turn.TurnOwner),
@@ -233,6 +245,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapons.DesertEagle),
         typeof(Code.Gameplay.Features.Weapons.ShootCount),
         typeof(Code.Gameplay.Features.Weapons.WeaponTypeIdComponent),
+        typeof(Code.Gameplay.Interrupt.ForceEndTurn),
+        typeof(Code.Gameplay.Interrupt.InterruptTypeIdComponent),
+        typeof(Code.Gameplay.Interrupt.SkipNextTurn),
         typeof(Code.Gameplay.TransformComponent)
     };
 }

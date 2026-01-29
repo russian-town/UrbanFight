@@ -33,11 +33,10 @@ namespace Code.Infrastructure.States
         public void Enter()
         {
             GameEntity hero = PlaceHero()
-                .AddInitiative(100)
-                .AddAttackIntent(100);
+                .AddInitiative(20);
 
             GameEntity enemy = PlaceEnemy()
-                .AddInitiative(0);
+                .AddInitiative(10);
 
             CreateAbilityHolders(hero.Id, enemy.Id);
             SetFighterTargets(hero, enemy);

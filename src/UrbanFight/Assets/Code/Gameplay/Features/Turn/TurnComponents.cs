@@ -9,4 +9,7 @@ namespace Code.Gameplay.Features.Turn
     
     [Game] public class AttackIntent : IComponent { public int Value; }
     [Game] public class Initiative : IComponent { public int Value; }
+    
+    [Game] public class AbilityCasting : IComponent { }
+    [Game] public class AbilityHitMoment : IComponent { }
 }

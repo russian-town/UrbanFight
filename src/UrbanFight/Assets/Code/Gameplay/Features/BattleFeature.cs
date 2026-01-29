@@ -7,6 +7,7 @@ using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.Turn;
+using Code.Gameplay.Interrupt;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
 
@@ -21,11 +22,12 @@ namespace Code.Gameplay.Features
             
             Add(systems.Create<FighterStatsFeature>());
             
-            Add(systems.Create<TurnFeature>());
-            
             Add(systems.Create<AbilityFeature>());
             Add(systems.Create<EffectFeature>());
             Add(systems.Create<StatusFeature>());
+            
+            Add(systems.Create<InterruptFeature>());
+            Add(systems.Create<TurnFeature>());
             
             Add(systems.Create<CooldownSystem>());
             
