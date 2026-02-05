@@ -20,5 +20,10 @@ MonoBehaviour:
     Value: 100
   - StatTypeId: 3
     Value: 0
+  - StatTypeId: 4
+    Value: 8
+  - StatTypeId: 5
+    Value: 0
   EntityTemplate: {fileID: -165678118306828701, guid: d4079aa080d130449a01cc6eb8e1f447,
     type: 3}
+  JumpAttackConfig: {fileID: 11400000, guid: a03f97afc62b7b349af11a09c78f3379, type: 2}

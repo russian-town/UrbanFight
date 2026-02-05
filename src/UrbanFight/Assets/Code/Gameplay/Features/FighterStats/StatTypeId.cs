@@ -6,5 +6,7 @@
         BaseDamage = 1,
         BaseHealth = 2,
         BaseArmor = 3,
+        MoveDuration = 4,
+        StartPhaseElapsed = 5,
     }
 }

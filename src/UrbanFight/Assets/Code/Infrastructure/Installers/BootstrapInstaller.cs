@@ -7,6 +7,7 @@ using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Fighter.Factory;
 using Code.Gameplay.Features.Lifetime.Factories;
 using Code.Gameplay.Features.Statuses.Factory;
+using Code.Gameplay.Features.Timelines.Factory;
 using Code.Gameplay.Features.Turn.Factories;
 using Code.Gameplay.Interrupt.Factory;
 using Code.Gameplay.Windows;
@@ -101,6 +102,7 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IStatusFactory>().To<StatusFactory>().AsSingle();
             Container.Bind<IInterruptFactory>().To<InterruptFactory>().AsSingle();
             Container.Bind<ITurnFactory>().To<TurnFactory>().AsSingle();
+            Container.Bind<ITimelineFactory>().To<TimelineFactory>().AsSingle();
         }
 
         private void BindUIServices()

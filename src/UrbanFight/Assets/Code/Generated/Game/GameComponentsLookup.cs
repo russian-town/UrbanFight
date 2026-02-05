@@ -39,55 +39,76 @@ public static class GameComponentsLookup {
     public const int ParentAbilityId = 28;
     public const int Showed = 29;
     public const int StatusSetups = 30;
-    public const int Cooldown = 31;
-    public const int CooldownLeft = 32;
-    public const int CooldownUp = 33;
-    public const int CounterattackEffect = 34;
-    public const int DamageEffect = 35;
-    public const int Effect = 36;
-    public const int HealEffect = 37;
-    public const int Active = 38;
-    public const int BaseArmor = 39;
-    public const int BaseDamage = 40;
-    public const int CurrentHealth = 41;
-    public const int Fighter = 42;
-    public const int FighterAnimator = 43;
-    public const int FighterTypeId = 44;
-    public const int MaxHealth = 45;
-    public const int BaseStats = 46;
-    public const int EffectValue = 47;
-    public const int StatChange = 48;
-    public const int StatModifiers = 49;
-    public const int Dead = 50;
-    public const int HealthBar = 51;
-    public const int ProcessingDeath = 52;
-    public const int Affected = 53;
-    public const int Applied = 54;
-    public const int ApplierStatusLink = 55;
-    public const int Duration = 56;
-    public const int Period = 57;
-    public const int Status = 58;
-    public const int StatusTypeId = 59;
-    public const int TimeLeft = 60;
-    public const int TimeSinceLastTick = 61;
-    public const int Unapplied = 62;
-    public const int AbilityCasting = 63;
-    public const int AbilityHitMoment = 64;
-    public const int AttackIntent = 65;
-    public const int Initiative = 66;
-    public const int TurnOwner = 67;
-    public const int TurnQueue = 68;
-    public const int TurnState = 69;
-    public const int DamagePerShoot = 70;
-    public const int DesertEagle = 71;
-    public const int ShootCount = 72;
-    public const int WeaponTypeId = 73;
-    public const int ForceEndTurn = 74;
-    public const int InterruptTypeId = 75;
-    public const int SkipNextTurn = 76;
-    public const int Transform = 77;
+    public const int ActionAnimationState = 31;
+    public const int ActionAnimationWeight = 32;
+    public const int BaseAnimationState = 33;
+    public const int BaseAnimationWeight = 34;
+    public const int Knockback = 35;
+    public const int ReactionAnimationState = 36;
+    public const int ReactionAnimationWeight = 37;
+    public const int Cooldown = 38;
+    public const int CooldownLeft = 39;
+    public const int CooldownUp = 40;
+    public const int CounterattackEffect = 41;
+    public const int DamageEffect = 42;
+    public const int Effect = 43;
+    public const int HealEffect = 44;
+    public const int Active = 45;
+    public const int BaseArmor = 46;
+    public const int BaseDamage = 47;
+    public const int CurrentHealth = 48;
+    public const int Fighter = 49;
+    public const int FighterAnimator = 50;
+    public const int FighterTypeId = 51;
+    public const int MaxHealth = 52;
+    public const int BaseStats = 53;
+    public const int EffectValue = 54;
+    public const int StatChange = 55;
+    public const int StatModifiers = 56;
+    public const int Dead = 57;
+    public const int HealthBar = 58;
+    public const int ProcessingDeath = 59;
+    public const int CurrentPhaseIndex = 60;
+    public const int DestinationReached = 61;
+    public const int MoveProgress = 62;
+    public const int PhaseElapsed = 63;
+    public const int Phases = 64;
+    public const int PhaseStartPosition = 65;
+    public const int StartPosition = 66;
+    public const int TargetPosition = 67;
+    public const int Affected = 68;
+    public const int Applied = 69;
+    public const int ApplierStatusLink = 70;
+    public const int Duration = 71;
+    public const int Period = 72;
+    public const int Status = 73;
+    public const int StatusTypeId = 74;
+    public const int TimeLeft = 75;
+    public const int TimeSinceLastTick = 76;
+    public const int Unapplied = 77;
+    public const int CombatTimeline = 78;
+    public const int Completed = 79;
+    public const int NormalizedTime = 80;
+    public const int Started = 81;
+    public const int Timeline = 82;
+    public const int AbilityCasting = 83;
+    public const int AbilityHitMoment = 84;
+    public const int AttackIntent = 85;
+    public const int Initiative = 86;
+    public const int MovementIntent = 87;
+    public const int TurnOwner = 88;
+    public const int TurnQueue = 89;
+    public const int TurnState = 90;
+    public const int DamagePerShoot = 91;
+    public const int DesertEagle = 92;
+    public const int ShootCount = 93;
+    public const int WeaponTypeId = 94;
+    public const int ForceEndTurn = 95;
+    public const int InterruptTypeId = 96;
+    public const int SkipNextTurn = 97;
+    public const int Transform = 98;
 
-    public const int TotalComponents = 78;
+    public const int TotalComponents = 99;
 
     public static readonly string[] componentNames = {
         "Parent",
@@ -121,6 +142,13 @@ public static class GameComponentsLookup {
         "ParentAbilityId",
         "Showed",
         "StatusSetups",
+        "ActionAnimationState",
+        "ActionAnimationWeight",
+        "BaseAnimationState",
+        "BaseAnimationWeight",
+        "Knockback",
+        "ReactionAnimationState",
+        "ReactionAnimationWeight",
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
@@ -143,6 +171,14 @@ public static class GameComponentsLookup {
         "Dead",
         "HealthBar",
         "ProcessingDeath",
+        "CurrentPhaseIndex",
+        "DestinationReached",
+        "MoveProgress",
+        "PhaseElapsed",
+        "Phases",
+        "PhaseStartPosition",
+        "StartPosition",
+        "TargetPosition",
         "Affected",
         "Applied",
         "ApplierStatusLink",
@@ -153,10 +189,16 @@ public static class GameComponentsLookup {
         "TimeLeft",
         "TimeSinceLastTick",
         "Unapplied",
+        "CombatTimeline",
+        "Completed",
+        "NormalizedTime",
+        "Started",
+        "Timeline",
         "AbilityCasting",
         "AbilityHitMoment",
         "AttackIntent",
         "Initiative",
+        "MovementIntent",
         "TurnOwner",
         "TurnQueue",
         "TurnState",
@@ -202,6 +244,13 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.ParentAbilityId),
         typeof(Code.Gameplay.Features.Abilities.Showed),
         typeof(Code.Gameplay.Features.Abilities.StatusSetups),
+        typeof(Code.Gameplay.Features.AbilityAnimation.ActionAnimationStateComponent),
+        typeof(Code.Gameplay.Features.AbilityAnimation.ActionAnimationWeight),
+        typeof(Code.Gameplay.Features.AbilityAnimation.BaseAnimationStateComponent),
+        typeof(Code.Gameplay.Features.AbilityAnimation.BaseAnimationWeight),
+        typeof(Code.Gameplay.Features.AbilityAnimation.Knockback),
+        typeof(Code.Gameplay.Features.AbilityAnimation.ReactionAnimationStateComponent),
+        typeof(Code.Gameplay.Features.AbilityAnimation.ReactionAnimationWeight),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
@@ -224,6 +273,14 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.Dead),
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.HealthBarComponent),
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.ProcessingDeath),
+        typeof(Code.Gameplay.Features.Movement.CurrentPhaseIndex),
+        typeof(Code.Gameplay.Features.Movement.DestinationReached),
+        typeof(Code.Gameplay.Features.Movement.MoveProgress),
+        typeof(Code.Gameplay.Features.Movement.PhaseElapsed),
+        typeof(Code.Gameplay.Features.Movement.Phases),
+        typeof(Code.Gameplay.Features.Movement.PhaseStartPosition),
+        typeof(Code.Gameplay.Features.Movement.StartPosition),
+        typeof(Code.Gameplay.Features.Movement.TargetPosition),
         typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),
         typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),
@@ -234,10 +291,16 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.TimeLeft),
         typeof(Code.Gameplay.Features.Statuses.TimeSinceLastTick),
         typeof(Code.Gameplay.Features.Statuses.Unapplied),
+        typeof(Code.Gameplay.Features.Timelines.CombatTimeline),
+        typeof(Code.Gameplay.Features.Timelines.Completed),
+        typeof(Code.Gameplay.Features.Timelines.NormalizedTime),
+        typeof(Code.Gameplay.Features.Timelines.Started),
+        typeof(Code.Gameplay.Features.Timelines.Timeline),
         typeof(Code.Gameplay.Features.Turn.AbilityCasting),
         typeof(Code.Gameplay.Features.Turn.AbilityHitMoment),
         typeof(Code.Gameplay.Features.Turn.AttackIntent),
         typeof(Code.Gameplay.Features.Turn.Initiative),
+        typeof(Code.Gameplay.Features.Turn.MovementIntent),
         typeof(Code.Gameplay.Features.Turn.TurnOwner),
         typeof(Code.Gameplay.Features.Turn.TurnQueue),
         typeof(Code.Gameplay.Features.Turn.TurnStateComponent),

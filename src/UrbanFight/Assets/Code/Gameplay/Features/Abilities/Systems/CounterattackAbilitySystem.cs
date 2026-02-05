@@ -53,7 +53,6 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 foreach (StatusSetup statusSetups in ability.StatusSetups)
                     _statusFactory.CreateStatus(statusSetups, ability.ProducerId, ability.TargetId);
 
-                fighter.FighterAnimator.PlayCounterattack();
                 ability.isCasted = true;
             }
         }

@@ -35,7 +35,6 @@ namespace Code.Gameplay.Features.Statuses.Systems
                 if (status.ProducerId != producer.Id)
                     continue;
 
-                producer.FighterAnimator.PlayCounterattack();
                 status.isApplied = true;
             }
         }

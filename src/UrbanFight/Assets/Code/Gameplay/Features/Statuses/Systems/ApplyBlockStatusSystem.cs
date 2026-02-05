@@ -45,7 +45,6 @@ namespace Code.Gameplay.Features.Statuses.Systems
                     if (ability.ProducerId != status.TargetId)
                         continue;
 
-                    fighter.FighterAnimator.PlayQuickstep();
                     status.isApplied = true;
                 }
             }

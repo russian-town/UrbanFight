@@ -1,11 +1,13 @@
 ﻿using Code.Common.Destruct;
 using Code.Gameplay.Features.Abilities;
+using Code.Gameplay.Features.AbilityAnimation;
 using Code.Gameplay.Features.Cooldowns.Systems;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.FighterStats;
 using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Statuses;
+using Code.Gameplay.Features.Timelines;
 using Code.Gameplay.Features.Turn;
 using Code.Gameplay.Interrupt;
 using Code.Infrastructure.Systems;
@@ -18,7 +20,10 @@ namespace Code.Gameplay.Features
         public BattleFeature(ISystemFactory systems)
         {
             Add(systems.Create<BindViewFeature>());
+            
+            Add(systems.Create<TimelineFeature>());
             Add(systems.Create<MovementFeature>());
+            Add(systems.Create<AbilityAnimationFeature>());
             
             Add(systems.Create<FighterStatsFeature>());
             

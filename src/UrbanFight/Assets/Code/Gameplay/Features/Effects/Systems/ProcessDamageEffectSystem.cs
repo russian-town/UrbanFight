@@ -28,9 +28,6 @@ namespace Code.Gameplay.Features.Effects.Systems
                     continue;
 
                 target.ReplaceCurrentHealth(target.CurrentHealth - effect.EffectValue);
-
-                if (target.hasFighterAnimator)
-                    target.FighterAnimator.PlayDamageTaken();
             }
         }
     }

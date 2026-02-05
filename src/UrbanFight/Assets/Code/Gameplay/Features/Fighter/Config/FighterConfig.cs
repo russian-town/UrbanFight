@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.FighterStats.Configs;
+using Code.Gameplay.Features.Movement.Configs;
 using Code.Infrastructure.View;
 using UnityEngine;
 
@@ -11,5 +12,6 @@ namespace Code.Gameplay.Features.Fighter.Config
         public FighterTypeId TypeId;
         public List<StatByTypeId> FighterStats;
         public EntityBehaviour EntityTemplate;
+        public JumpAttackConfig JumpAttackConfig;
     }
 }

@@ -36,7 +36,6 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 ability.AddCooldown(ability.AttackTime);
                 ability.AddCooldownLeft(ability.AttackTime);
                 
-                fighter.FighterAnimator.PlayBaseAttack();
                 ability.isCasted = true;
             }
         }
