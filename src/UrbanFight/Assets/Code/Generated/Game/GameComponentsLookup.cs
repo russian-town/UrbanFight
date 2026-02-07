@@ -39,76 +39,83 @@ public static class GameComponentsLookup {
     public const int ParentAbilityId = 28;
     public const int Showed = 29;
     public const int StatusSetups = 30;
-    public const int ActionAnimationState = 31;
-    public const int ActionAnimationWeight = 32;
-    public const int BaseAnimationState = 33;
-    public const int BaseAnimationWeight = 34;
-    public const int Knockback = 35;
-    public const int ReactionAnimationState = 36;
-    public const int ReactionAnimationWeight = 37;
-    public const int Cooldown = 38;
-    public const int CooldownLeft = 39;
-    public const int CooldownUp = 40;
-    public const int CounterattackEffect = 41;
-    public const int DamageEffect = 42;
-    public const int Effect = 43;
-    public const int HealEffect = 44;
-    public const int Active = 45;
-    public const int BaseArmor = 46;
-    public const int BaseDamage = 47;
-    public const int CurrentHealth = 48;
-    public const int Fighter = 49;
-    public const int FighterAnimator = 50;
-    public const int FighterTypeId = 51;
-    public const int MaxHealth = 52;
-    public const int BaseStats = 53;
-    public const int EffectValue = 54;
-    public const int StatChange = 55;
-    public const int StatModifiers = 56;
-    public const int Dead = 57;
-    public const int HealthBar = 58;
-    public const int ProcessingDeath = 59;
-    public const int CurrentPhaseIndex = 60;
-    public const int DestinationReached = 61;
-    public const int MoveProgress = 62;
-    public const int PhaseElapsed = 63;
-    public const int Phases = 64;
-    public const int PhaseStartPosition = 65;
-    public const int StartPosition = 66;
-    public const int TargetPosition = 67;
-    public const int Affected = 68;
-    public const int Applied = 69;
-    public const int ApplierStatusLink = 70;
-    public const int Duration = 71;
-    public const int Period = 72;
-    public const int Status = 73;
-    public const int StatusTypeId = 74;
-    public const int TimeLeft = 75;
-    public const int TimeSinceLastTick = 76;
-    public const int Unapplied = 77;
-    public const int CombatTimeline = 78;
-    public const int Completed = 79;
-    public const int NormalizedTime = 80;
-    public const int Started = 81;
-    public const int Timeline = 82;
-    public const int AbilityCasting = 83;
-    public const int AbilityHitMoment = 84;
-    public const int AttackIntent = 85;
-    public const int Initiative = 86;
-    public const int MovementIntent = 87;
-    public const int TurnOwner = 88;
-    public const int TurnQueue = 89;
-    public const int TurnState = 90;
-    public const int DamagePerShoot = 91;
-    public const int DesertEagle = 92;
-    public const int ShootCount = 93;
-    public const int WeaponTypeId = 94;
-    public const int ForceEndTurn = 95;
-    public const int InterruptTypeId = 96;
-    public const int SkipNextTurn = 97;
-    public const int Transform = 98;
+    public const int Cooldown = 31;
+    public const int CooldownLeft = 32;
+    public const int CooldownUp = 33;
+    public const int CounterattackEffect = 34;
+    public const int DamageEffect = 35;
+    public const int Effect = 36;
+    public const int HealEffect = 37;
+    public const int Active = 38;
+    public const int BaseArmor = 39;
+    public const int BaseDamage = 40;
+    public const int CurrentHealth = 41;
+    public const int Fighter = 42;
+    public const int FighterAnimator = 43;
+    public const int FighterTypeId = 44;
+    public const int MaxHealth = 45;
+    public const int BaseStats = 46;
+    public const int EffectValue = 47;
+    public const int StatChange = 48;
+    public const int StatModifiers = 49;
+    public const int Dead = 50;
+    public const int HealthBar = 51;
+    public const int ProcessingDeath = 52;
+    public const int DestinationReached = 53;
+    public const int MoveProgress = 54;
+    public const int StartPosition = 55;
+    public const int TargetPosition = 56;
+    public const int Affected = 57;
+    public const int Applied = 58;
+    public const int ApplierStatusLink = 59;
+    public const int Duration = 60;
+    public const int Period = 61;
+    public const int Status = 62;
+    public const int StatusTypeId = 63;
+    public const int TimeLeft = 64;
+    public const int TimeSinceLastTick = 65;
+    public const int Unapplied = 66;
+    public const int DamagePerShoot = 67;
+    public const int DesertEagle = 68;
+    public const int ShootCount = 69;
+    public const int WeaponTypeId = 70;
+    public const int ActionAnimationStateId = 71;
+    public const int AnimationStateId = 72;
+    public const int AnimationTrack = 73;
+    public const int AnimationTypeId = 74;
+    public const int BaseAnimationStateId = 75;
+    public const int ReactionAnimationStateId = 76;
+    public const int AttackTrack = 77;
+    public const int HitEndTime = 78;
+    public const int HitStartTime = 79;
+    public const int AbilityIntent = 80;
+    public const int DamageIntent = 81;
+    public const int IntentTypeId = 82;
+    public const int InterruptIntent = 83;
+    public const int MovementIntent = 84;
+    public const int TurnIntent = 85;
+    public const int CausesInterrupt = 86;
+    public const int InterruptRequest = 87;
+    public const int InterruptTargetId = 88;
+    public const int InterruptType = 89;
+    public const int MoveEndTime = 90;
+    public const int MovementTrack = 91;
+    public const int MovementType = 92;
+    public const int MoveStartTime = 93;
+    public const int ActiveTimeline = 94;
+    public const int InterruptPriority = 95;
+    public const int PreviousNormalizedTime = 96;
+    public const int ReactionCreated = 97;
+    public const int Timeline = 98;
+    public const int TimelineDuration = 99;
+    public const int TimelineNormalizedTime = 100;
+    public const int TimelineOwnerId = 101;
+    public const int TimelineTargetId = 102;
+    public const int TimelineTime = 103;
+    public const int ReadyForNextTurn = 104;
+    public const int Transform = 105;
 
-    public const int TotalComponents = 99;
+    public const int TotalComponents = 106;
 
     public static readonly string[] componentNames = {
         "Parent",
@@ -142,13 +149,6 @@ public static class GameComponentsLookup {
         "ParentAbilityId",
         "Showed",
         "StatusSetups",
-        "ActionAnimationState",
-        "ActionAnimationWeight",
-        "BaseAnimationState",
-        "BaseAnimationWeight",
-        "Knockback",
-        "ReactionAnimationState",
-        "ReactionAnimationWeight",
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
@@ -171,12 +171,8 @@ public static class GameComponentsLookup {
         "Dead",
         "HealthBar",
         "ProcessingDeath",
-        "CurrentPhaseIndex",
         "DestinationReached",
         "MoveProgress",
-        "PhaseElapsed",
-        "Phases",
-        "PhaseStartPosition",
         "StartPosition",
         "TargetPosition",
         "Affected",
@@ -189,26 +185,44 @@ public static class GameComponentsLookup {
         "TimeLeft",
         "TimeSinceLastTick",
         "Unapplied",
-        "CombatTimeline",
-        "Completed",
-        "NormalizedTime",
-        "Started",
-        "Timeline",
-        "AbilityCasting",
-        "AbilityHitMoment",
-        "AttackIntent",
-        "Initiative",
-        "MovementIntent",
-        "TurnOwner",
-        "TurnQueue",
-        "TurnState",
         "DamagePerShoot",
         "DesertEagle",
         "ShootCount",
         "WeaponTypeId",
-        "ForceEndTurn",
-        "InterruptTypeId",
-        "SkipNextTurn",
+        "ActionAnimationStateId",
+        "AnimationStateId",
+        "AnimationTrack",
+        "AnimationTypeId",
+        "BaseAnimationStateId",
+        "ReactionAnimationStateId",
+        "AttackTrack",
+        "HitEndTime",
+        "HitStartTime",
+        "AbilityIntent",
+        "DamageIntent",
+        "IntentTypeId",
+        "InterruptIntent",
+        "MovementIntent",
+        "TurnIntent",
+        "CausesInterrupt",
+        "InterruptRequest",
+        "InterruptTargetId",
+        "InterruptType",
+        "MoveEndTime",
+        "MovementTrack",
+        "MovementType",
+        "MoveStartTime",
+        "ActiveTimeline",
+        "InterruptPriority",
+        "PreviousNormalizedTime",
+        "ReactionCreated",
+        "Timeline",
+        "TimelineDuration",
+        "TimelineNormalizedTime",
+        "TimelineOwnerId",
+        "TimelineTargetId",
+        "TimelineTime",
+        "ReadyForNextTurn",
         "Transform"
     };
 
@@ -244,13 +258,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.ParentAbilityId),
         typeof(Code.Gameplay.Features.Abilities.Showed),
         typeof(Code.Gameplay.Features.Abilities.StatusSetups),
-        typeof(Code.Gameplay.Features.AbilityAnimation.ActionAnimationStateComponent),
-        typeof(Code.Gameplay.Features.AbilityAnimation.ActionAnimationWeight),
-        typeof(Code.Gameplay.Features.AbilityAnimation.BaseAnimationStateComponent),
-        typeof(Code.Gameplay.Features.AbilityAnimation.BaseAnimationWeight),
-        typeof(Code.Gameplay.Features.AbilityAnimation.Knockback),
-        typeof(Code.Gameplay.Features.AbilityAnimation.ReactionAnimationStateComponent),
-        typeof(Code.Gameplay.Features.AbilityAnimation.ReactionAnimationWeight),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
@@ -273,12 +280,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.Dead),
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.HealthBarComponent),
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.ProcessingDeath),
-        typeof(Code.Gameplay.Features.Movement.CurrentPhaseIndex),
         typeof(Code.Gameplay.Features.Movement.DestinationReached),
         typeof(Code.Gameplay.Features.Movement.MoveProgress),
-        typeof(Code.Gameplay.Features.Movement.PhaseElapsed),
-        typeof(Code.Gameplay.Features.Movement.Phases),
-        typeof(Code.Gameplay.Features.Movement.PhaseStartPosition),
         typeof(Code.Gameplay.Features.Movement.StartPosition),
         typeof(Code.Gameplay.Features.Movement.TargetPosition),
         typeof(Code.Gameplay.Features.Statuses.Affected),
@@ -291,26 +294,44 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.TimeLeft),
         typeof(Code.Gameplay.Features.Statuses.TimeSinceLastTick),
         typeof(Code.Gameplay.Features.Statuses.Unapplied),
-        typeof(Code.Gameplay.Features.Timelines.CombatTimeline),
-        typeof(Code.Gameplay.Features.Timelines.Completed),
-        typeof(Code.Gameplay.Features.Timelines.NormalizedTime),
-        typeof(Code.Gameplay.Features.Timelines.Started),
-        typeof(Code.Gameplay.Features.Timelines.Timeline),
-        typeof(Code.Gameplay.Features.Turn.AbilityCasting),
-        typeof(Code.Gameplay.Features.Turn.AbilityHitMoment),
-        typeof(Code.Gameplay.Features.Turn.AttackIntent),
-        typeof(Code.Gameplay.Features.Turn.Initiative),
-        typeof(Code.Gameplay.Features.Turn.MovementIntent),
-        typeof(Code.Gameplay.Features.Turn.TurnOwner),
-        typeof(Code.Gameplay.Features.Turn.TurnQueue),
-        typeof(Code.Gameplay.Features.Turn.TurnStateComponent),
         typeof(Code.Gameplay.Features.Weapons.DamagePerShoot),
         typeof(Code.Gameplay.Features.Weapons.DesertEagle),
         typeof(Code.Gameplay.Features.Weapons.ShootCount),
         typeof(Code.Gameplay.Features.Weapons.WeaponTypeIdComponent),
-        typeof(Code.Gameplay.Interrupt.ForceEndTurn),
-        typeof(Code.Gameplay.Interrupt.InterruptTypeIdComponent),
-        typeof(Code.Gameplay.Interrupt.SkipNextTurn),
+        typeof(Code.Gameplay.TimelineFeatures.Animations.ActionAnimationStateId),
+        typeof(Code.Gameplay.TimelineFeatures.Animations.AnimationStateId),
+        typeof(Code.Gameplay.TimelineFeatures.Animations.AnimationTrack),
+        typeof(Code.Gameplay.TimelineFeatures.Animations.AnimationTypeIdComponent),
+        typeof(Code.Gameplay.TimelineFeatures.Animations.BaseAnimationStateId),
+        typeof(Code.Gameplay.TimelineFeatures.Animations.ReactionAnimationStateId),
+        typeof(Code.Gameplay.TimelineFeatures.Attacks.AttackTrack),
+        typeof(Code.Gameplay.TimelineFeatures.Attacks.HitEndTime),
+        typeof(Code.Gameplay.TimelineFeatures.Attacks.HitStartTime),
+        typeof(Code.Gameplay.TimelineFeatures.Intents.AbilityIntent),
+        typeof(Code.Gameplay.TimelineFeatures.Intents.DamageIntent),
+        typeof(Code.Gameplay.TimelineFeatures.Intents.IntentTypeIdComponent),
+        typeof(Code.Gameplay.TimelineFeatures.Intents.InterruptIntent),
+        typeof(Code.Gameplay.TimelineFeatures.Intents.MovementIntent),
+        typeof(Code.Gameplay.TimelineFeatures.Intents.TurnIntent),
+        typeof(Code.Gameplay.TimelineFeatures.InterruptTurn.CausesInterrupt),
+        typeof(Code.Gameplay.TimelineFeatures.InterruptTurn.InterruptRequest),
+        typeof(Code.Gameplay.TimelineFeatures.InterruptTurn.InterruptTargetId),
+        typeof(Code.Gameplay.TimelineFeatures.InterruptTurn.InterruptType),
+        typeof(Code.Gameplay.TimelineFeatures.Movements.MoveEndTime),
+        typeof(Code.Gameplay.TimelineFeatures.Movements.MovementTrack),
+        typeof(Code.Gameplay.TimelineFeatures.Movements.MovementType),
+        typeof(Code.Gameplay.TimelineFeatures.Movements.MoveStartTime),
+        typeof(Code.Gameplay.TimelineFeatures.Timelines.ActiveTimeline),
+        typeof(Code.Gameplay.TimelineFeatures.Timelines.InterruptPriority),
+        typeof(Code.Gameplay.TimelineFeatures.Timelines.PreviousNormalizedTime),
+        typeof(Code.Gameplay.TimelineFeatures.Timelines.ReactionCreated),
+        typeof(Code.Gameplay.TimelineFeatures.Timelines.Timeline),
+        typeof(Code.Gameplay.TimelineFeatures.Timelines.TimelineDuration),
+        typeof(Code.Gameplay.TimelineFeatures.Timelines.TimelineNormalizedTime),
+        typeof(Code.Gameplay.TimelineFeatures.Timelines.TimelineOwnerId),
+        typeof(Code.Gameplay.TimelineFeatures.Timelines.TimelineTargetId),
+        typeof(Code.Gameplay.TimelineFeatures.Timelines.TimelineTime),
+        typeof(Code.Gameplay.TimelineFeatures.Turns.ReadyForNextTurn),
         typeof(Code.Gameplay.TransformComponent)
     };
 }

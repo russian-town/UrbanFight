@@ -1,7 +1,6 @@
 ﻿using Code.Common.Entity;
 using Code.Gameplay.Features.Fighter.Factory;
 using Code.Gameplay.Features.Lifetime.Factories;
-using Code.Gameplay.Features.Timelines.Factory;
 using Code.Infrastructure.Services.Level;
 using Code.Infrastructure.Services.StaticData;
 using Code.Infrastructure.StateMachine.Game;
@@ -17,36 +16,28 @@ namespace Code.Infrastructure.States
         private readonly IFighterFactory _fighterFactory;
         private readonly ILevelDataProvider _levelDataProvider;
         private readonly IHealthBarFactory _healthBarFactory;
-        private readonly ITimelineFactory _timelineFactory;
         private readonly IStaticDataService _staticDataService;
 
         public BattleEnterState(
             IGameStateMachine gameStateMachine,
             IFighterFactory fighterFactory,
             ILevelDataProvider levelDataProvider,
-            IHealthBarFactory healthBarFactory,
-            ITimelineFactory timelineFactory)
+            IHealthBarFactory healthBarFactory)
         {
             _gameStateMachine = gameStateMachine;
             _fighterFactory = fighterFactory;
             _levelDataProvider = levelDataProvider;
             _healthBarFactory = healthBarFactory;
-            _timelineFactory = timelineFactory;
         }
 
         public void Enter()
         {
-            GameEntity hero = PlaceHero()
-                .AddInitiative(20);
-
-            GameEntity enemy = PlaceEnemy()
-                .AddInitiative(10);
+            GameEntity hero = PlaceHero();
+            GameEntity enemy = PlaceEnemy();
 
             CreateAbilityHolders(hero.Id, enemy.Id);
             SetFighterTargets(hero, enemy);
             CreateHealthBars(hero.Id, enemy.Id);
-
-            _timelineFactory.CreateTimeline(hero.Id);
 
             _gameStateMachine.Enter<BattleLoopState>();
         }

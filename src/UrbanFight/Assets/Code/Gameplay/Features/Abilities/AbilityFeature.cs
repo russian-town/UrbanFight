@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.Features.Abilities.Systems;
-using Code.Gameplay.Features.Turn.System;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Abilities
@@ -12,8 +11,6 @@ namespace Code.Gameplay.Features.Abilities
             Add(systems.Create<CounterattackAbilitySystem>());
 
             Add(systems.Create<BaseAbilitySystem>());
-            
-            Add(systems.Create<TurnEndConditionSystem>());
         }
     }
 }

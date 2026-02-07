@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Timelines.Timeline timelineComponent = new Code.Gameplay.Features.Timelines.Timeline();
+    static readonly Code.Gameplay.TimelineFeatures.Timelines.Timeline timelineComponent = new Code.Gameplay.TimelineFeatures.Timelines.Timeline();
 
     public bool isTimeline {
         get { return HasComponent(GameComponentsLookup.Timeline); }

@@ -1,5 +1,4 @@
-﻿using Code.Gameplay.Features.AbilityAnimation;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Code.Gameplay.Features.Fighter.Behaviours
 {
@@ -27,6 +26,6 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
             Animator.Play("SlamDown", 0, normalizedTime);
         }
 
-        public void SetState(BaseAnimationState state) => Animator.SetInteger(StateHash, (int)state);
+        //public void SetState(BaseAnimationState state) => Animator.SetInteger(StateHash, (int)state);
     }
 }

@@ -2,7 +2,6 @@
 using System.Linq;
 using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.AbilityAnimation;
 using Code.Gameplay.Features.Fighter.Config;
 using Code.Gameplay.Features.FighterStats;
 using Code.Infrastructure.Services.Identifiers;
@@ -39,16 +38,8 @@ namespace Code.Gameplay.Features.Fighter.Factory
                     .AddBaseArmor(baseStats[StatTypeId.BaseArmor])
                     .AddBaseDamage(baseStats[StatTypeId.BaseDamage])
                     .AddStatModifiers(new Dictionary<StatTypeId, float>())
-                    //.AddMoveProgress(0f)
                     .AddStartPosition(socket.position)
-                    .AddBaseAnimationState(BaseAnimationState.Idle)
-                    .AddActionAnimationState(ActionAnimationState.None)
-                    .AddReactionAnimationState(ReactionAnimationState.None)
                     .AddTargetPosition(targetPosition)
-                    .AddPhases(config.JumpAttackConfig.Phases)
-                    .AddPhaseStartPosition(socket.position)
-                    .AddPhaseElapsed(baseStats[StatTypeId.StartPhaseElapsed])
-                    .AddCurrentPhaseIndex(0)
                     .AddDuration(baseStats[StatTypeId.MoveDuration])
                     .With(x => x.isFighter = true)
                 ;

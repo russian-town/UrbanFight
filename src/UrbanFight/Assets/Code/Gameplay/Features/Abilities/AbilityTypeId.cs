@@ -6,5 +6,6 @@
         BaseAttack = 1,
         Block = 2,
         Counterattack = 3,
+        ReactionStagger = 4,
     }
 }

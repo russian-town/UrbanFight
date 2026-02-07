@@ -33,28 +33,24 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Turn.MovementIntent movementIntent { get { return (Code.Gameplay.Features.Turn.MovementIntent)GetComponent(GameComponentsLookup.MovementIntent); } }
-    public int MovementIntent { get { return movementIntent.Value; } }
-    public bool hasMovementIntent { get { return HasComponent(GameComponentsLookup.MovementIntent); } }
+    static readonly Code.Gameplay.TimelineFeatures.Intents.MovementIntent movementIntentComponent = new Code.Gameplay.TimelineFeatures.Intents.MovementIntent();
 
-    public GameEntity AddMovementIntent(int newValue) {
-        var index = GameComponentsLookup.MovementIntent;
-        var component = (Code.Gameplay.Features.Turn.MovementIntent)CreateComponent(index, typeof(Code.Gameplay.Features.Turn.MovementIntent));
-        component.Value = newValue;
-        AddComponent(index, component);
-        return this;
-    }
+    public bool isMovementIntent {
+        get { return HasComponent(GameComponentsLookup.MovementIntent); }
+        set {
+            if (value != isMovementIntent) {
+                var index = GameComponentsLookup.MovementIntent;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : movementIntentComponent;
 
-    public GameEntity ReplaceMovementIntent(int newValue) {
-        var index = GameComponentsLookup.MovementIntent;
-        var component = (Code.Gameplay.Features.Turn.MovementIntent)CreateComponent(index, typeof(Code.Gameplay.Features.Turn.MovementIntent));
-        component.Value = newValue;
-        ReplaceComponent(index, component);
-        return this;
-    }
-
-    public GameEntity RemoveMovementIntent() {
-        RemoveComponent(GameComponentsLookup.MovementIntent);
-        return this;
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }

@@ -10,7 +10,6 @@ namespace Code.Gameplay.Features.Movement
             Add(systemFactory.Create<UpdateTransformPositionSystem>());
             Add(systemFactory.Create<UpdateTransformRotationSystem>());
             
-            Add(systemFactory.Create<MultiPhaseMovementSystem>());
             Add(systemFactory.Create<MovementToTargetSystem>());
         }
     }
