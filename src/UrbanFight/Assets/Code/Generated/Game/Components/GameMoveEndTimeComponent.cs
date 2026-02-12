@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.TimelineFeatures.Movements.MoveEndTime moveEndTime { get { return (Code.Gameplay.TimelineFeatures.Movements.MoveEndTime)GetComponent(GameComponentsLookup.MoveEndTime); } }
+    public Code.Gameplay.Features.Movement.MoveEndTime moveEndTime { get { return (Code.Gameplay.Features.Movement.MoveEndTime)GetComponent(GameComponentsLookup.MoveEndTime); } }
     public float MoveEndTime { get { return moveEndTime.Value; } }
     public bool hasMoveEndTime { get { return HasComponent(GameComponentsLookup.MoveEndTime); } }
 
     public GameEntity AddMoveEndTime(float newValue) {
         var index = GameComponentsLookup.MoveEndTime;
-        var component = (Code.Gameplay.TimelineFeatures.Movements.MoveEndTime)CreateComponent(index, typeof(Code.Gameplay.TimelineFeatures.Movements.MoveEndTime));
+        var component = (Code.Gameplay.Features.Movement.MoveEndTime)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.MoveEndTime));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMoveEndTime(float newValue) {
         var index = GameComponentsLookup.MoveEndTime;
-        var component = (Code.Gameplay.TimelineFeatures.Movements.MoveEndTime)CreateComponent(index, typeof(Code.Gameplay.TimelineFeatures.Movements.MoveEndTime));
+        var component = (Code.Gameplay.Features.Movement.MoveEndTime)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.MoveEndTime));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

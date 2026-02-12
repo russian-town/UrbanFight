@@ -17,11 +17,10 @@ namespace Code.Gameplay.Features
         {
             Add(systems.Create<BindViewFeature>());
             
+            Add(systems.Create<AbilityFeature>());
             Add(systems.Create<MovementFeature>());
             
             Add(systems.Create<FighterStatsFeature>());
-            
-            Add(systems.Create<AbilityFeature>());
             Add(systems.Create<EffectFeature>());
             Add(systems.Create<StatusFeature>());
             

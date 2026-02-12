@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.TimelineFeatures.Animations.AnimationStateId animationStateId { get { return (Code.Gameplay.TimelineFeatures.Animations.AnimationStateId)GetComponent(GameComponentsLookup.AnimationStateId); } }
+    public Code.Gameplay.Features.Animations.AnimationStateId animationStateId { get { return (Code.Gameplay.Features.Animations.AnimationStateId)GetComponent(GameComponentsLookup.AnimationStateId); } }
     public int AnimationStateId { get { return animationStateId.Value; } }
     public bool hasAnimationStateId { get { return HasComponent(GameComponentsLookup.AnimationStateId); } }
 
     public GameEntity AddAnimationStateId(int newValue) {
         var index = GameComponentsLookup.AnimationStateId;
-        var component = (Code.Gameplay.TimelineFeatures.Animations.AnimationStateId)CreateComponent(index, typeof(Code.Gameplay.TimelineFeatures.Animations.AnimationStateId));
+        var component = (Code.Gameplay.Features.Animations.AnimationStateId)CreateComponent(index, typeof(Code.Gameplay.Features.Animations.AnimationStateId));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAnimationStateId(int newValue) {
         var index = GameComponentsLookup.AnimationStateId;
-        var component = (Code.Gameplay.TimelineFeatures.Animations.AnimationStateId)CreateComponent(index, typeof(Code.Gameplay.TimelineFeatures.Animations.AnimationStateId));
+        var component = (Code.Gameplay.Features.Animations.AnimationStateId)CreateComponent(index, typeof(Code.Gameplay.Features.Animations.AnimationStateId));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

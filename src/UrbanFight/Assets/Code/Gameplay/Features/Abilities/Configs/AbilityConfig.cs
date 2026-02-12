@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Combats;
 using Code.Gameplay.Features.Fighter;
-using Code.Gameplay.TimelineFeatures.Movements;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Configs
@@ -13,26 +13,17 @@ namespace Code.Gameplay.Features.Abilities.Configs
         public BattleTypeId BattleTypeId;
         [Range(0f, 1f)] public float Chanse;
         public List<AbilityLevel> Levels;
-        public bool Blockable;
-        public float Cooldown;
-        public float AttackTime;
-        public string DebugText;
-        public bool IsAnimatedWait;
-        
-        public AbilityTypeId AbilityId;
 
-        public float Duration;
-
-        public bool HasMovement;
-        public MovementTypeId MovementType;
-        public float MoveStart;
-        public float MoveEnd;
-
-        public bool HasAttack;
-        public float HitStart;
-        public float HitEnd;
+        public string AbilityName;
+        public float ApproachSpeed;
+        public float WindUpTime;
         public float Damage;
-
-        public int AnimationState;
+        public float ReactionWindowStart;
+        public float ReactionWindowEnd;
+        public TelegraphTypeId TelegraphTypeId;
+        public bool SkipNextTurnOnHit;
+        public AbilityConfig[] FollowUpAbilities;
+        [Range(0f, 1f)] public float FollowUpChance;
+        public float Efficiency;
     }
 }

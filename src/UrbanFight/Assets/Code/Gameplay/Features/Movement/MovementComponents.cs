@@ -8,4 +8,6 @@ namespace Code.Gameplay.Features.Movement
     
     [Game] public class MoveProgress : IComponent { public float Value; }
     [Game] public class DestinationReached : IComponent { }
+    [Game] public class MoveStartTime : IComponent { public float Value; }
+    [Game] public class MoveEndTime : IComponent { public float Value; }
 }

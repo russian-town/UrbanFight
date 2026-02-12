@@ -7,10 +7,7 @@ namespace Code.Gameplay.Features.Abilities.Behaviours
     public class AbilityItem : MonoBehaviour
     {
         public TextMeshProUGUI Debug;
-        
-        public void Setup(AbilityConfig config)
-        {
-            Debug.text = config.DebugText;
-        }
+
+        public void Setup(AbilityConfig config) { }
     }
 }

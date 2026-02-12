@@ -19,11 +19,19 @@ MonoBehaviour:
   Levels:
   - EffectSetups:
     - EffectTypeId: 1
-      TargetTypeId: 0
       Value: 10
     StatusSetups: []
-  Blockable: 1
-  Cooldown: 1
-  AttackTime: 1
-  DebugText: 
-  IsAnimatedWait: 0
+  TimelineSteps:
+  - StepType: 1
+    TimeOffset: 0
+    Payload:
+      Effects: []
+      AbilityRequests: []
+      Animation: {fileID: 0}
+      ReactionType: 0
+      State:
+        ApplyStagger: 0
+        ApplyStun: 0
+        ApplyInterrupt: 0
+        Duration: 0
+  ChainAbilities: []

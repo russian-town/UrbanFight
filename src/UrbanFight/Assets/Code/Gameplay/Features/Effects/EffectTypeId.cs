@@ -6,5 +6,6 @@
         Damage = 1,
         Heal = 2,
         Сounterattack = 3,
+        Block = 4,
     }
 }

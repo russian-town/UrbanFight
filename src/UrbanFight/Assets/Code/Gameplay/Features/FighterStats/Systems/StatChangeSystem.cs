@@ -1,8 +1,7 @@
 ﻿using Code.Common.EntityIndices;
-using Code.Gameplay.Features.FighterStats;
 using Entitas;
 
-namespace Code.Gameplay.Features.CharacterStats.Systems
+namespace Code.Gameplay.Features.FighterStats.Systems
 {
     public class StatChangeSystem : IExecuteSystem
     {

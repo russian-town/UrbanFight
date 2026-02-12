@@ -24,7 +24,17 @@ MonoBehaviour:
       Duration: 0
       Period: 0
   Blockable: 0
-  Cooldown: 0
   AttackTime: 0
   DebugText: 
-  IsAnimatedWait: 0
+  TimelineSetup:
+    Duration: 0
+    AnimationState: 0
+    HasMovement: 0
+    MovementTypeId: 0
+    AbilityTypeId: 0
+    MoveStart: 0
+    MoveEnd: 0
+    HasAttack: 0
+    HitStart: 0
+    HitEnd: 0
+    Damage: 0

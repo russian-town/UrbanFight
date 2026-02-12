@@ -1,4 +1,4 @@
-﻿using Code.Gameplay.Features.CharacterStats.Systems;
+﻿using Code.Gameplay.Features.FighterStats.Systems;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.FighterStats

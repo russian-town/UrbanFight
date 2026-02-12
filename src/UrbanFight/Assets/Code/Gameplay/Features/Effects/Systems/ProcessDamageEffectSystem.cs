@@ -20,8 +20,10 @@ namespace Code.Gameplay.Features.Effects.Systems
         {
             foreach (GameEntity effect in _effects)
             {
+                float damage = effect.EffectValue;
                 GameEntity target = effect.Target();
 
+                target.ReplaceCurrentHealth(target.CurrentHealth - damage);
                 effect.isProcessed = true;
 
                 if (target.isDead)

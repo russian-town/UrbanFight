@@ -27,5 +27,9 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
         }
 
         //public void SetState(BaseAnimationState state) => Animator.SetInteger(StateHash, (int)state);
+        public void Play(int taskValue)
+        {
+            
+        }
     }
 }

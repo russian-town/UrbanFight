@@ -94,7 +94,9 @@ namespace Code.Infrastructure.Installers
         {
             Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
             Container.Bind<IFighterFactory>().To<FighterFactory>().AsSingle();
+
             Container.Bind<IAbilityFactory>().To<AbilityFactory>().AsSingle();
+
             Container.Bind<IEffectFactory>().To<EffectFactory>().AsSingle();
             Container.Bind<IStatusFactory>().To<StatusFactory>().AsSingle();
         }

@@ -34,88 +34,78 @@ public static class GameComponentsLookup {
     public const int Casted = 23;
     public const int Counterattack = 24;
     public const int DamagePerCast = 25;
-    public const int EffectSetups = 26;
-    public const int HealPerCast = 27;
+    public const int DefenceAbility = 26;
+    public const int EffectSetups = 27;
     public const int ParentAbilityId = 28;
     public const int Showed = 29;
     public const int StatusSetups = 30;
-    public const int Cooldown = 31;
-    public const int CooldownLeft = 32;
-    public const int CooldownUp = 33;
-    public const int CounterattackEffect = 34;
-    public const int DamageEffect = 35;
-    public const int Effect = 36;
-    public const int HealEffect = 37;
-    public const int Active = 38;
-    public const int BaseArmor = 39;
-    public const int BaseDamage = 40;
-    public const int CurrentHealth = 41;
-    public const int Fighter = 42;
-    public const int FighterAnimator = 43;
-    public const int FighterTypeId = 44;
-    public const int MaxHealth = 45;
-    public const int BaseStats = 46;
-    public const int EffectValue = 47;
-    public const int StatChange = 48;
-    public const int StatModifiers = 49;
-    public const int Dead = 50;
-    public const int HealthBar = 51;
-    public const int ProcessingDeath = 52;
-    public const int DestinationReached = 53;
-    public const int MoveProgress = 54;
-    public const int StartPosition = 55;
-    public const int TargetPosition = 56;
-    public const int Affected = 57;
-    public const int Applied = 58;
-    public const int ApplierStatusLink = 59;
-    public const int Duration = 60;
-    public const int Period = 61;
-    public const int Status = 62;
-    public const int StatusTypeId = 63;
-    public const int TimeLeft = 64;
-    public const int TimeSinceLastTick = 65;
-    public const int Unapplied = 66;
-    public const int DamagePerShoot = 67;
-    public const int DesertEagle = 68;
-    public const int ShootCount = 69;
-    public const int WeaponTypeId = 70;
-    public const int ActionAnimationStateId = 71;
-    public const int AnimationStateId = 72;
-    public const int AnimationTrack = 73;
-    public const int AnimationTypeId = 74;
-    public const int BaseAnimationStateId = 75;
-    public const int ReactionAnimationStateId = 76;
-    public const int AttackTrack = 77;
-    public const int HitEndTime = 78;
-    public const int HitStartTime = 79;
-    public const int AbilityIntent = 80;
-    public const int DamageIntent = 81;
-    public const int IntentTypeId = 82;
-    public const int InterruptIntent = 83;
-    public const int MovementIntent = 84;
-    public const int TurnIntent = 85;
-    public const int CausesInterrupt = 86;
-    public const int InterruptRequest = 87;
-    public const int InterruptTargetId = 88;
-    public const int InterruptType = 89;
-    public const int MoveEndTime = 90;
-    public const int MovementTrack = 91;
-    public const int MovementType = 92;
-    public const int MoveStartTime = 93;
-    public const int ActiveTimeline = 94;
-    public const int InterruptPriority = 95;
-    public const int PreviousNormalizedTime = 96;
-    public const int ReactionCreated = 97;
-    public const int Timeline = 98;
-    public const int TimelineDuration = 99;
-    public const int TimelineNormalizedTime = 100;
-    public const int TimelineOwnerId = 101;
-    public const int TimelineTargetId = 102;
-    public const int TimelineTime = 103;
-    public const int ReadyForNextTurn = 104;
-    public const int Transform = 105;
+    public const int AnimationStateId = 31;
+    public const int AbilityExecutionState = 32;
+    public const int AbilityTarget = 33;
+    public const int AnimationTelegraph = 34;
+    public const int AttackAbility = 35;
+    public const int Attacker = 36;
+    public const int BlockAbility = 37;
+    public const int CancelNextHit = 38;
+    public const int CombatReady = 39;
+    public const int CounterAttackAbility = 40;
+    public const int DamageModifier = 41;
+    public const int Defender = 42;
+    public const int Dodge = 43;
+    public const int DodgeAbility = 44;
+    public const int EffectResolutionPhase = 45;
+    public const int Position = 46;
+    public const int ReactionWindow = 47;
+    public const int SkipNextTurn = 48;
+    public const int StatusResolutionPhase = 49;
+    public const int TelegraphPhase = 50;
+    public const int TurnResolutionPhase = 51;
+    public const int Cooldown = 52;
+    public const int CooldownLeft = 53;
+    public const int CooldownUp = 54;
+    public const int CounterattackEffect = 55;
+    public const int DamageEffect = 56;
+    public const int Effect = 57;
+    public const int HealEffect = 58;
+    public const int Active = 59;
+    public const int Alive = 60;
+    public const int BaseArmor = 61;
+    public const int BaseDamage = 62;
+    public const int CurrentHealth = 63;
+    public const int Fighter = 64;
+    public const int FighterAnimator = 65;
+    public const int FighterTypeId = 66;
+    public const int MaxHealth = 67;
+    public const int BaseStats = 68;
+    public const int EffectValue = 69;
+    public const int StatChange = 70;
+    public const int StatModifiers = 71;
+    public const int Dead = 72;
+    public const int HealthBar = 73;
+    public const int ProcessingDeath = 74;
+    public const int DestinationReached = 75;
+    public const int MoveEndTime = 76;
+    public const int MoveProgress = 77;
+    public const int MoveStartTime = 78;
+    public const int StartPosition = 79;
+    public const int TargetPosition = 80;
+    public const int Affected = 81;
+    public const int Applied = 82;
+    public const int ApplierStatusLink = 83;
+    public const int Duration = 84;
+    public const int Period = 85;
+    public const int Status = 86;
+    public const int StatusTypeId = 87;
+    public const int TimeLeft = 88;
+    public const int TimeSinceLastTick = 89;
+    public const int Unapplied = 90;
+    public const int DamagePerShoot = 91;
+    public const int DesertEagle = 92;
+    public const int ShootCount = 93;
+    public const int WeaponTypeId = 94;
+    public const int Transform = 95;
 
-    public const int TotalComponents = 106;
+    public const int TotalComponents = 96;
 
     public static readonly string[] componentNames = {
         "Parent",
@@ -144,11 +134,32 @@ public static class GameComponentsLookup {
         "Casted",
         "Counterattack",
         "DamagePerCast",
+        "DefenceAbility",
         "EffectSetups",
-        "HealPerCast",
         "ParentAbilityId",
         "Showed",
         "StatusSetups",
+        "AnimationStateId",
+        "AbilityExecutionState",
+        "AbilityTarget",
+        "AnimationTelegraph",
+        "AttackAbility",
+        "Attacker",
+        "BlockAbility",
+        "CancelNextHit",
+        "CombatReady",
+        "CounterAttackAbility",
+        "DamageModifier",
+        "Defender",
+        "Dodge",
+        "DodgeAbility",
+        "EffectResolutionPhase",
+        "Position",
+        "ReactionWindow",
+        "SkipNextTurn",
+        "StatusResolutionPhase",
+        "TelegraphPhase",
+        "TurnResolutionPhase",
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
@@ -157,6 +168,7 @@ public static class GameComponentsLookup {
         "Effect",
         "HealEffect",
         "Active",
+        "Alive",
         "BaseArmor",
         "BaseDamage",
         "CurrentHealth",
@@ -172,7 +184,9 @@ public static class GameComponentsLookup {
         "HealthBar",
         "ProcessingDeath",
         "DestinationReached",
+        "MoveEndTime",
         "MoveProgress",
+        "MoveStartTime",
         "StartPosition",
         "TargetPosition",
         "Affected",
@@ -189,40 +203,6 @@ public static class GameComponentsLookup {
         "DesertEagle",
         "ShootCount",
         "WeaponTypeId",
-        "ActionAnimationStateId",
-        "AnimationStateId",
-        "AnimationTrack",
-        "AnimationTypeId",
-        "BaseAnimationStateId",
-        "ReactionAnimationStateId",
-        "AttackTrack",
-        "HitEndTime",
-        "HitStartTime",
-        "AbilityIntent",
-        "DamageIntent",
-        "IntentTypeId",
-        "InterruptIntent",
-        "MovementIntent",
-        "TurnIntent",
-        "CausesInterrupt",
-        "InterruptRequest",
-        "InterruptTargetId",
-        "InterruptType",
-        "MoveEndTime",
-        "MovementTrack",
-        "MovementType",
-        "MoveStartTime",
-        "ActiveTimeline",
-        "InterruptPriority",
-        "PreviousNormalizedTime",
-        "ReactionCreated",
-        "Timeline",
-        "TimelineDuration",
-        "TimelineNormalizedTime",
-        "TimelineOwnerId",
-        "TimelineTargetId",
-        "TimelineTime",
-        "ReadyForNextTurn",
         "Transform"
     };
 
@@ -253,11 +233,32 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.Casted),
         typeof(Code.Gameplay.Features.Abilities.Counterattack),
         typeof(Code.Gameplay.Features.Abilities.DamagePerCast),
+        typeof(Code.Gameplay.Features.Abilities.DefenceAbility),
         typeof(Code.Gameplay.Features.Abilities.EffectSetups),
-        typeof(Code.Gameplay.Features.Abilities.HealPerCast),
         typeof(Code.Gameplay.Features.Abilities.ParentAbilityId),
         typeof(Code.Gameplay.Features.Abilities.Showed),
         typeof(Code.Gameplay.Features.Abilities.StatusSetups),
+        typeof(Code.Gameplay.Features.Animations.AnimationStateId),
+        typeof(Code.Gameplay.Features.Combats.AbilityExecutionStateComponent),
+        typeof(Code.Gameplay.Features.Combats.AbilityTarget),
+        typeof(Code.Gameplay.Features.Combats.AnimationTelegraphComponent),
+        typeof(Code.Gameplay.Features.Combats.AttackAbility),
+        typeof(Code.Gameplay.Features.Combats.Attacker),
+        typeof(Code.Gameplay.Features.Combats.BlockAbility),
+        typeof(Code.Gameplay.Features.Combats.CancelNextHit),
+        typeof(Code.Gameplay.Features.Combats.CombatReady),
+        typeof(Code.Gameplay.Features.Combats.CounterAttackAbility),
+        typeof(Code.Gameplay.Features.Combats.DamageModifier),
+        typeof(Code.Gameplay.Features.Combats.Defender),
+        typeof(Code.Gameplay.Features.Combats.Dodge),
+        typeof(Code.Gameplay.Features.Combats.DodgeAbility),
+        typeof(Code.Gameplay.Features.Combats.EffectResolutionPhase),
+        typeof(Code.Gameplay.Features.Combats.Position),
+        typeof(Code.Gameplay.Features.Combats.ReactionWindow),
+        typeof(Code.Gameplay.Features.Combats.SkipNextTurn),
+        typeof(Code.Gameplay.Features.Combats.StatusResolutionPhase),
+        typeof(Code.Gameplay.Features.Combats.TelegraphPhase),
+        typeof(Code.Gameplay.Features.Combats.TurnResolutionPhase),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
@@ -266,6 +267,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Effects.Effect),
         typeof(Code.Gameplay.Features.Effects.HealEffect),
         typeof(Code.Gameplay.Features.Fighter.Active),
+        typeof(Code.Gameplay.Features.Fighter.Alive),
         typeof(Code.Gameplay.Features.Fighter.BaseArmor),
         typeof(Code.Gameplay.Features.Fighter.BaseDamage),
         typeof(Code.Gameplay.Features.Fighter.CurrentHealth),
@@ -281,7 +283,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.HealthBarComponent),
         typeof(Code.Gameplay.Features.Lifetime.LifetimeComponents.ProcessingDeath),
         typeof(Code.Gameplay.Features.Movement.DestinationReached),
+        typeof(Code.Gameplay.Features.Movement.MoveEndTime),
         typeof(Code.Gameplay.Features.Movement.MoveProgress),
+        typeof(Code.Gameplay.Features.Movement.MoveStartTime),
         typeof(Code.Gameplay.Features.Movement.StartPosition),
         typeof(Code.Gameplay.Features.Movement.TargetPosition),
         typeof(Code.Gameplay.Features.Statuses.Affected),
@@ -298,40 +302,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapons.DesertEagle),
         typeof(Code.Gameplay.Features.Weapons.ShootCount),
         typeof(Code.Gameplay.Features.Weapons.WeaponTypeIdComponent),
-        typeof(Code.Gameplay.TimelineFeatures.Animations.ActionAnimationStateId),
-        typeof(Code.Gameplay.TimelineFeatures.Animations.AnimationStateId),
-        typeof(Code.Gameplay.TimelineFeatures.Animations.AnimationTrack),
-        typeof(Code.Gameplay.TimelineFeatures.Animations.AnimationTypeIdComponent),
-        typeof(Code.Gameplay.TimelineFeatures.Animations.BaseAnimationStateId),
-        typeof(Code.Gameplay.TimelineFeatures.Animations.ReactionAnimationStateId),
-        typeof(Code.Gameplay.TimelineFeatures.Attacks.AttackTrack),
-        typeof(Code.Gameplay.TimelineFeatures.Attacks.HitEndTime),
-        typeof(Code.Gameplay.TimelineFeatures.Attacks.HitStartTime),
-        typeof(Code.Gameplay.TimelineFeatures.Intents.AbilityIntent),
-        typeof(Code.Gameplay.TimelineFeatures.Intents.DamageIntent),
-        typeof(Code.Gameplay.TimelineFeatures.Intents.IntentTypeIdComponent),
-        typeof(Code.Gameplay.TimelineFeatures.Intents.InterruptIntent),
-        typeof(Code.Gameplay.TimelineFeatures.Intents.MovementIntent),
-        typeof(Code.Gameplay.TimelineFeatures.Intents.TurnIntent),
-        typeof(Code.Gameplay.TimelineFeatures.InterruptTurn.CausesInterrupt),
-        typeof(Code.Gameplay.TimelineFeatures.InterruptTurn.InterruptRequest),
-        typeof(Code.Gameplay.TimelineFeatures.InterruptTurn.InterruptTargetId),
-        typeof(Code.Gameplay.TimelineFeatures.InterruptTurn.InterruptType),
-        typeof(Code.Gameplay.TimelineFeatures.Movements.MoveEndTime),
-        typeof(Code.Gameplay.TimelineFeatures.Movements.MovementTrack),
-        typeof(Code.Gameplay.TimelineFeatures.Movements.MovementType),
-        typeof(Code.Gameplay.TimelineFeatures.Movements.MoveStartTime),
-        typeof(Code.Gameplay.TimelineFeatures.Timelines.ActiveTimeline),
-        typeof(Code.Gameplay.TimelineFeatures.Timelines.InterruptPriority),
-        typeof(Code.Gameplay.TimelineFeatures.Timelines.PreviousNormalizedTime),
-        typeof(Code.Gameplay.TimelineFeatures.Timelines.ReactionCreated),
-        typeof(Code.Gameplay.TimelineFeatures.Timelines.Timeline),
-        typeof(Code.Gameplay.TimelineFeatures.Timelines.TimelineDuration),
-        typeof(Code.Gameplay.TimelineFeatures.Timelines.TimelineNormalizedTime),
-        typeof(Code.Gameplay.TimelineFeatures.Timelines.TimelineOwnerId),
-        typeof(Code.Gameplay.TimelineFeatures.Timelines.TimelineTargetId),
-        typeof(Code.Gameplay.TimelineFeatures.Timelines.TimelineTime),
-        typeof(Code.Gameplay.TimelineFeatures.Turns.ReadyForNextTurn),
         typeof(Code.Gameplay.TransformComponent)
     };
 }

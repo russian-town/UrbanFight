@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Common;
-using Code.Gameplay.Features.CharacterStats.Indexing;
 using Code.Gameplay.Features.FighterStats;
+using Code.Gameplay.Features.FighterStats.Indexing;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.Statuses.Indexing;
 using Entitas;

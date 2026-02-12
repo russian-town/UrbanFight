@@ -29,7 +29,6 @@ namespace Code.Gameplay.Features.Abilities.Factories
                     .AddTargetId(targetId)
                     .With(x => x.AddAbilityTypeId(config.TypeId))
                     .With(x => x.isAbility = true)
-                    .With(x => x.isBlockable = true, when: config.Blockable)
                 ;
 
             return config.TypeId switch
@@ -47,7 +46,6 @@ namespace Code.Gameplay.Features.Abilities.Factories
             List<EffectSetup> effectSetups = config.Levels[currentAbilityLevel].EffectSetups;
 
             return entity
-                .AddAttackTime(config.AttackTime)
                 .With(x => x.isBaseAttack = true)
                 .With(x => x.AddEffectSetups(effectSetups), when: !effectSetups.IsNullOrEmpty());
         }
@@ -71,9 +69,7 @@ namespace Code.Gameplay.Features.Abilities.Factories
             return entity
                 .With(x => x.isCounterattack = true)
                 .With(x => x.AddEffectSetups(effectSetups), when: !effectSetups.IsNullOrEmpty())
-                .With(x => x.AddStatusSetups(statusSetups), when: !statusSetups.IsNullOrEmpty())
-                .AddCooldown(config.AttackTime)
-                .AddCooldownLeft(config.AttackTime);
+                .With(x => x.AddStatusSetups(statusSetups), when: !statusSetups.IsNullOrEmpty());
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using Code.Gameplay.Features.FighterStats;
-
-namespace Code.Gameplay.Features.CharacterStats.Indexing
+﻿namespace Code.Gameplay.Features.FighterStats.Indexing
 {
     public struct StatKey
     {

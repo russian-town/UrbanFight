@@ -6,5 +6,6 @@
         Block = 1,
         Counterattack = 2,
         Dodge = 3,
+        Shock = 4,
     }
 }

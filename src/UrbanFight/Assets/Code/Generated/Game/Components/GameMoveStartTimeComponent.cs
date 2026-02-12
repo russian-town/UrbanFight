@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.TimelineFeatures.Movements.MoveStartTime moveStartTime { get { return (Code.Gameplay.TimelineFeatures.Movements.MoveStartTime)GetComponent(GameComponentsLookup.MoveStartTime); } }
+    public Code.Gameplay.Features.Movement.MoveStartTime moveStartTime { get { return (Code.Gameplay.Features.Movement.MoveStartTime)GetComponent(GameComponentsLookup.MoveStartTime); } }
     public float MoveStartTime { get { return moveStartTime.Value; } }
     public bool hasMoveStartTime { get { return HasComponent(GameComponentsLookup.MoveStartTime); } }
 
     public GameEntity AddMoveStartTime(float newValue) {
         var index = GameComponentsLookup.MoveStartTime;
-        var component = (Code.Gameplay.TimelineFeatures.Movements.MoveStartTime)CreateComponent(index, typeof(Code.Gameplay.TimelineFeatures.Movements.MoveStartTime));
+        var component = (Code.Gameplay.Features.Movement.MoveStartTime)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.MoveStartTime));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMoveStartTime(float newValue) {
         var index = GameComponentsLookup.MoveStartTime;
-        var component = (Code.Gameplay.TimelineFeatures.Movements.MoveStartTime)CreateComponent(index, typeof(Code.Gameplay.TimelineFeatures.Movements.MoveStartTime));
+        var component = (Code.Gameplay.Features.Movement.MoveStartTime)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.MoveStartTime));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

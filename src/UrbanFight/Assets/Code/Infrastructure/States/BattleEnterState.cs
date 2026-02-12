@@ -2,7 +2,6 @@
 using Code.Gameplay.Features.Fighter.Factory;
 using Code.Gameplay.Features.Lifetime.Factories;
 using Code.Infrastructure.Services.Level;
-using Code.Infrastructure.Services.StaticData;
 using Code.Infrastructure.StateMachine.Game;
 using Code.Infrastructure.States.Abstract;
 
@@ -16,7 +15,6 @@ namespace Code.Infrastructure.States
         private readonly IFighterFactory _fighterFactory;
         private readonly ILevelDataProvider _levelDataProvider;
         private readonly IHealthBarFactory _healthBarFactory;
-        private readonly IStaticDataService _staticDataService;
 
         public BattleEnterState(
             IGameStateMachine gameStateMachine,
@@ -38,6 +36,7 @@ namespace Code.Infrastructure.States
             CreateAbilityHolders(hero.Id, enemy.Id);
             SetFighterTargets(hero, enemy);
             CreateHealthBars(hero.Id, enemy.Id);
+            StartBattle(hero.Id, enemy.Id);
 
             _gameStateMachine.Enter<BattleLoopState>();
         }
@@ -75,7 +74,8 @@ namespace Code.Infrastructure.States
         {
             hero.AddTargetId(enemy.Id);
             enemy.AddTargetId(hero.Id);
-            hero.isActive = true;
         }
+
+        private void StartBattle(int heroId, int enemyId) { }
     }
 }

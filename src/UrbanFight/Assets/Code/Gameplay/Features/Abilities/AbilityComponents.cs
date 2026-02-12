@@ -12,7 +12,6 @@ namespace Code.Gameplay.Features.Abilities
     [Game] public class BattleTypeIdComponent : IComponent { public BattleTypeId Value; }
     [Game] public class AttackTime : IComponent { public float Value; }
     [Game] public class DamagePerCast : IComponent { public float Value; }
-    [Game] public class HealPerCast : IComponent { public float Value; }
     
     [Game] public class EffectSetups : IComponent { public List<EffectSetup> Value; }
     [Game] public class StatusSetups : IComponent { public List<StatusSetup> Value; }
@@ -20,6 +19,7 @@ namespace Code.Gameplay.Features.Abilities
     [Game] public class AbilityHolderComponent : IComponent { public AbilityHolder Value; }
     
     [Game] public class Ability : IComponent { }
+    [Game] public class DefenceAbility : IComponent { }
     [Game] public class BaseAttack : IComponent { }
     [Game] public class Block : IComponent { }
     [Game] public class Counterattack : IComponent { }
@@ -28,6 +28,4 @@ namespace Code.Gameplay.Features.Abilities
     [Game] public class Casted : IComponent { }
     [Game] public class Showed : IComponent { }
     [Game] public class AnimatedWait : IComponent { }
-    
-    //if ability cooldown blocked request = 0 spawn effect
 }

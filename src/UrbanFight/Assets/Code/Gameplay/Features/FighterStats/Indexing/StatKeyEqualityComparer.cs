@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Code.Gameplay.Features.CharacterStats.Indexing
+namespace Code.Gameplay.Features.FighterStats.Indexing
 {
   public class StatKeyEqualityComparer : IEqualityComparer<StatKey>
   {
