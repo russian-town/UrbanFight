@@ -273,6 +273,12 @@ Transform:
   - {fileID: 2135702713}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &792826744 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1588561899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +359,7 @@ Camera:
   m_GameObject: {fileID: 961739749}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -421,7 +427,7 @@ GameObject:
   - component: {fileID: 1090768150}
   - component: {fileID: 1090768152}
   m_Layer: 5
-  m_Name: AbilityRightPlaceHolder
+  m_Name: RightPlaceHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,6 +608,124 @@ Transform:
   m_Children: []
   m_Father: {fileID: 681721929}
   m_LocalEulerAnglesHint: {x: 0, y: 65, z: 0}
+--- !u!1001 &1588561899
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 473530446614538516}
+    m_Modifications:
+    - target: {fileID: 1693606711821214470, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_Name
+      value: AbilityItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320734285359560144, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bbb2f88c0a19cef4fb6a3323fcf77eb6, type: 3}
 --- !u!224 &1626916512 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6957851883691396049, guid: a61e44ce0545ed548a9559749204f98b,
@@ -935,7 +1059,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 792826744}
   m_Father: {fileID: 1763507191}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1089,7 +1214,7 @@ GameObject:
   - component: {fileID: 473530446614538516}
   - component: {fileID: 933708307238103701}
   m_Layer: 5
-  m_Name: AbilityLeftPlaceHolder
+  m_Name: LeftPlaceHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

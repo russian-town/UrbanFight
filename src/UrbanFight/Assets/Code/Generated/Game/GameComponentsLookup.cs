@@ -39,73 +39,52 @@ public static class GameComponentsLookup {
     public const int ParentAbilityId = 28;
     public const int Showed = 29;
     public const int StatusSetups = 30;
-    public const int AnimationStateId = 31;
-    public const int AbilityExecutionState = 32;
-    public const int AbilityTarget = 33;
-    public const int AnimationTelegraph = 34;
-    public const int AttackAbility = 35;
-    public const int Attacker = 36;
-    public const int BlockAbility = 37;
-    public const int CancelNextHit = 38;
-    public const int CombatReady = 39;
-    public const int CounterAttackAbility = 40;
-    public const int DamageModifier = 41;
-    public const int Defender = 42;
-    public const int Dodge = 43;
-    public const int DodgeAbility = 44;
-    public const int EffectResolutionPhase = 45;
-    public const int Position = 46;
-    public const int ReactionWindow = 47;
-    public const int SkipNextTurn = 48;
-    public const int StatusResolutionPhase = 49;
-    public const int TelegraphPhase = 50;
-    public const int TurnResolutionPhase = 51;
-    public const int Cooldown = 52;
-    public const int CooldownLeft = 53;
-    public const int CooldownUp = 54;
-    public const int CounterattackEffect = 55;
-    public const int DamageEffect = 56;
-    public const int Effect = 57;
-    public const int HealEffect = 58;
-    public const int Active = 59;
-    public const int Alive = 60;
-    public const int BaseArmor = 61;
-    public const int BaseDamage = 62;
-    public const int CurrentHealth = 63;
-    public const int Fighter = 64;
-    public const int FighterAnimator = 65;
-    public const int FighterTypeId = 66;
-    public const int MaxHealth = 67;
-    public const int BaseStats = 68;
-    public const int EffectValue = 69;
-    public const int StatChange = 70;
-    public const int StatModifiers = 71;
-    public const int Dead = 72;
-    public const int HealthBar = 73;
-    public const int ProcessingDeath = 74;
-    public const int DestinationReached = 75;
-    public const int MoveEndTime = 76;
-    public const int MoveProgress = 77;
-    public const int MoveStartTime = 78;
-    public const int StartPosition = 79;
-    public const int TargetPosition = 80;
-    public const int Affected = 81;
-    public const int Applied = 82;
-    public const int ApplierStatusLink = 83;
-    public const int Duration = 84;
-    public const int Period = 85;
-    public const int Status = 86;
-    public const int StatusTypeId = 87;
-    public const int TimeLeft = 88;
-    public const int TimeSinceLastTick = 89;
-    public const int Unapplied = 90;
-    public const int DamagePerShoot = 91;
-    public const int DesertEagle = 92;
-    public const int ShootCount = 93;
-    public const int WeaponTypeId = 94;
-    public const int Transform = 95;
+    public const int Cooldown = 31;
+    public const int CooldownLeft = 32;
+    public const int CooldownUp = 33;
+    public const int CounterattackEffect = 34;
+    public const int DamageEffect = 35;
+    public const int Effect = 36;
+    public const int HealEffect = 37;
+    public const int Active = 38;
+    public const int Alive = 39;
+    public const int BaseArmor = 40;
+    public const int BaseDamage = 41;
+    public const int CurrentHealth = 42;
+    public const int Fighter = 43;
+    public const int FighterAnimator = 44;
+    public const int FighterTypeId = 45;
+    public const int MaxHealth = 46;
+    public const int BaseStats = 47;
+    public const int EffectValue = 48;
+    public const int StatChange = 49;
+    public const int StatModifiers = 50;
+    public const int Dead = 51;
+    public const int HealthBar = 52;
+    public const int ProcessingDeath = 53;
+    public const int DestinationReached = 54;
+    public const int MoveEndTime = 55;
+    public const int MoveProgress = 56;
+    public const int MoveStartTime = 57;
+    public const int StartPosition = 58;
+    public const int TargetPosition = 59;
+    public const int Affected = 60;
+    public const int Applied = 61;
+    public const int ApplierStatusLink = 62;
+    public const int Duration = 63;
+    public const int Period = 64;
+    public const int Status = 65;
+    public const int StatusTypeId = 66;
+    public const int TimeLeft = 67;
+    public const int TimeSinceLastTick = 68;
+    public const int Unapplied = 69;
+    public const int DamagePerShoot = 70;
+    public const int DesertEagle = 71;
+    public const int ShootCount = 72;
+    public const int WeaponTypeId = 73;
+    public const int Transform = 74;
 
-    public const int TotalComponents = 96;
+    public const int TotalComponents = 75;
 
     public static readonly string[] componentNames = {
         "Parent",
@@ -139,27 +118,6 @@ public static class GameComponentsLookup {
         "ParentAbilityId",
         "Showed",
         "StatusSetups",
-        "AnimationStateId",
-        "AbilityExecutionState",
-        "AbilityTarget",
-        "AnimationTelegraph",
-        "AttackAbility",
-        "Attacker",
-        "BlockAbility",
-        "CancelNextHit",
-        "CombatReady",
-        "CounterAttackAbility",
-        "DamageModifier",
-        "Defender",
-        "Dodge",
-        "DodgeAbility",
-        "EffectResolutionPhase",
-        "Position",
-        "ReactionWindow",
-        "SkipNextTurn",
-        "StatusResolutionPhase",
-        "TelegraphPhase",
-        "TurnResolutionPhase",
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
@@ -238,27 +196,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.ParentAbilityId),
         typeof(Code.Gameplay.Features.Abilities.Showed),
         typeof(Code.Gameplay.Features.Abilities.StatusSetups),
-        typeof(Code.Gameplay.Features.Animations.AnimationStateId),
-        typeof(Code.Gameplay.Features.Combats.AbilityExecutionStateComponent),
-        typeof(Code.Gameplay.Features.Combats.AbilityTarget),
-        typeof(Code.Gameplay.Features.Combats.AnimationTelegraphComponent),
-        typeof(Code.Gameplay.Features.Combats.AttackAbility),
-        typeof(Code.Gameplay.Features.Combats.Attacker),
-        typeof(Code.Gameplay.Features.Combats.BlockAbility),
-        typeof(Code.Gameplay.Features.Combats.CancelNextHit),
-        typeof(Code.Gameplay.Features.Combats.CombatReady),
-        typeof(Code.Gameplay.Features.Combats.CounterAttackAbility),
-        typeof(Code.Gameplay.Features.Combats.DamageModifier),
-        typeof(Code.Gameplay.Features.Combats.Defender),
-        typeof(Code.Gameplay.Features.Combats.Dodge),
-        typeof(Code.Gameplay.Features.Combats.DodgeAbility),
-        typeof(Code.Gameplay.Features.Combats.EffectResolutionPhase),
-        typeof(Code.Gameplay.Features.Combats.Position),
-        typeof(Code.Gameplay.Features.Combats.ReactionWindow),
-        typeof(Code.Gameplay.Features.Combats.SkipNextTurn),
-        typeof(Code.Gameplay.Features.Combats.StatusResolutionPhase),
-        typeof(Code.Gameplay.Features.Combats.TelegraphPhase),
-        typeof(Code.Gameplay.Features.Combats.TurnResolutionPhase),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),

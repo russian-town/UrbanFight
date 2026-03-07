@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Combats;
 using Code.Gameplay.Features.Fighter;
+using TMPro;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Configs
@@ -11,19 +11,13 @@ namespace Code.Gameplay.Features.Abilities.Configs
         public AbilityTypeId TypeId;
         public FighterTypeId FighterTypeId;
         public BattleTypeId BattleTypeId;
+        
         [Range(0f, 1f)] public float Chanse;
         public List<AbilityLevel> Levels;
-
-        public string AbilityName;
-        public float ApproachSpeed;
-        public float WindUpTime;
-        public float Damage;
-        public float ReactionWindowStart;
-        public float ReactionWindowEnd;
-        public TelegraphTypeId TelegraphTypeId;
-        public bool SkipNextTurnOnHit;
-        public AbilityConfig[] FollowUpAbilities;
-        [Range(0f, 1f)] public float FollowUpChance;
-        public float Efficiency;
+        public Sprite Icon;
+        
+        [Space(10f)]
+        public string Desctiption;
+        public string Name;
     }
 }

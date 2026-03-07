@@ -2,8 +2,6 @@
 using System.Linq;
 using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Combats;
-using Code.Gameplay.Features.Combats.Setups;
 using Code.Gameplay.Features.Fighter.Config;
 using Code.Gameplay.Features.FighterStats;
 using Code.Infrastructure.Services.Identifiers;
@@ -43,8 +41,6 @@ namespace Code.Gameplay.Features.Fighter.Factory
                     .AddStartPosition(socket.position)
                     .AddTargetPosition(targetPosition)
                     .AddDuration(baseStats[StatTypeId.MoveDuration])
-                    .AddAbilityExecutionState(new AbilityExecutionState { Time = 0f, Completed = false, })
-                    .AddAnimationTelegraph(new AnimationTelegraph(TelegraphTypeId.None, 0f))
                     .With(x => x.isFighter = true)
                     .With(x => x.isAlive = true)
                 ;
